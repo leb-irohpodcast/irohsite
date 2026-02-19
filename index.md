@@ -1,6 +1,8 @@
-As we build out our website, you can find more information, but there is a basic player for now and a link to our podcast [RSS](https://pinecast.com/feed/iroh) feed.
+Hi, welcome to the International Race of Hammpions. Here's our [RSS](https://pinecast.com/feed/iroh) feed. 
 
-You can also find links to each episode below, as well as an embedded player from our host.
+When we get a 'Round Tuit, we'll finish the website, maybe.
+
+The episodes are listed below, and our mailbag is open for commentary at mailbag [at] irohpodcast [dot] com.
 
 Episode List:
 1: [Trailer](https://pinecast.com/listen/58a7ce50-348a-4a00-8cb9-1de8637f53a2.mp3) 
