@@ -1,6 +1,6 @@
 Hi, welcome to the International Race of Hammpions. Here's our [RSS](https://pinecast.com/feed/iroh) feed. 
 
-When we get a 'Round Tuit, we'll finish the website, maybe. Until then, we're on [Bluesky](https://bsky.social/profiles/irohpodcast.com) for lots of updates and other chattering.
+When we get a 'Round Tuit, we'll finish the website, maybe. Until then, we're on [Bluesky](https://bsky.app/profile/irohpodcast.com) for lots of updates and other chattering.
 
 The episodes are listed below, and our mailbag is open for commentary at mailbag [at] irohpodcast [dot] com.
 
