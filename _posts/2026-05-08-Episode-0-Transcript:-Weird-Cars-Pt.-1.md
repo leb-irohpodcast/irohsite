@@ -1,6 +1,6 @@
-# Episode 0 - Weird Cars, Pt 1
+# The International Race of Hammpions Episode 0 - Weird Cars, Pt 1
 
-**[Link:](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
+**[Episode Link](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
 
 ---
 
