@@ -1,10 +1,10 @@
-# IROH Episode 03 A Perfectly Cromulent.mp3
+#Episode 03 - A Perfectly Cromulent 940
 
-**Meeting Date:** 2nd Jun, 2026 - 4:21 PM
+**[Link:](https://pinecast.com/listen/41b0901f-ae5b-45bd-b5a9-b8066a2d370e.mp3)**
 
 ---
 
-**Caleb** *[00:00]*: Good evening, hampians, and welcome to another episode. This week's episode. Episode three, a perfectly cromulent 940. I'm Caleb and I'm joined here with gino and justin. And we will be taking you through the tale of a perfectly crumulent 940. Take it away, geno. 
+**Caleb** *[00:00]*: Good evening Hammpions, and welcome to another episode. This week's episode. Episode 3, A Perfectly Cromulent 940. I'm Caleb and I'm joined here with Geno and justin. And we will be taking you through the tale of a perfectly crumulent 940. Take it away, Geno. 
 **Geno** *[00:22]*: All right, so now I'm thinking back. This was probably a little over 10 years ago now. My brother bought a car from a guy on a volvo board we frequent. He bought it from Mr. Thou, who lives. Yeah. Who lives not close to me, but not super far. And my brother lives in washington state, which is one end of the country. And I'm smack in the middle of the country. So Mr. Thau brought. And his brother brought the car out and dropped it off at my house after my brother bought it. And the plan was for my brother to buy some parts to fix it up and send them to me. And then I would fix it up and he'd be there in a month or so. And then we would drive the car to his place in washington. 
 **Geno** *[01:28]*: So the car gets dropped off, the parts show up, and my add ass ignores it for the most part. You know, I drive it here and there. It's got a couple little issues. It had sat. There was a. Some sort of a fuel injector issue. It never. It didn't always run quite right, and it didn't always overdrive. Didn't always work. So. I sit on the parts for a while. My brother shows up, and that lights a fire under my ass. And so I spent some time. We managed to get the midwest rust that's on some of these parts off the. The rear sway bar was a particular pain in the ass. But I figured out a contraption to soak the mounts in, evaporust under while on the car. And that finally got that off. I put on the. 
 **Geno** *[02:37]*: The bypass plate for the overdrive and that solved that issue. And it had been running pretty well. So we decided. We got up early one morning after that gotten. He got new tires, got in alignment. We had the ipd shocks, sways. It was nice. Brand new tires on a set of clean hydras red 940 sedan. I slapped an 850R wing on the back of it. It was beautiful. And we got up early in the morning and we hit the road and we made it 15 miles before the injectors started acting up again. And he wanted to take it somewhere to diagnose it because weren't positive it was that. But I had a. It Was fuel related for sure. And shop looks at it, yada, you know, a couple hours, hundred bucks later, like, oh, we think it's this. 
@@ -49,7 +49,7 @@
 **Justin** *[11:14]*: Idaho's wild. Yeah, I think it's the. I think in terms of geography, it's the most insane state in the country. Just from the. The differences it has. 
 **Geno** *[11:24]*: Yeah, yeah. No, Coeur d' Alene's, like, up in the middle of the. The panhandle there and. Yeah, yeah, just a lot of. A lot of narrow mustache enthusiasts up there. 
 **Caleb** *[11:40]*: Bless our hearts. 
-**Justin** *[11:41]*: You know, Gino, that narrow mustache comment got me thinking. You should. If. If you ever encounter a Nazi, you should just tell them to widen their mustache a bit. You're like, bro, like, if you need to tell them to calm down, you'd be like, bro, I think your mustache needs to be a little bit right now. 
+**Justin** *[11:41]*: You know, Geno, that narrow mustache comment got me thinking. You should. If. If you ever encounter a Nazi, you should just tell them to widen their mustache a bit. You're like, bro, like, if you need to tell them to calm down, you'd be like, bro, I think your mustache needs to be a little bit right now. 
 **Geno** *[11:57]*: You know, given our. Given our local airport and the fact that this involves the Dakotas, they could also widen their stance. Yeah, that's another. God. What was that guy's name? I want to say it was Larry Craig, wasn't it? Senator Larry Craig. Sounds. Sounds right to me. 
 **Justin** *[12:18]*: He was the one, right. 
 **Geno** *[12:20]*: Tapping his foot in the MSP men's room trying to. Trying to get some strange. 
@@ -276,7 +276,7 @@
 **Caleb** *[41:20]*: Yeah. So our prices. So before the whole mess started for gasoline were around 440 a gallon and now we are around 485, 490 a gallon. 
 **Justin** *[41:36]*: But that's like I said, that's closer to normal because normal is 440. 
 **Caleb** *[41:42]*: Right. That's rough. 
-**Justin** *[41:45]*: We're dealing with Brazil prices. It's un American. You know Gino, you should continue the 940 story. We completely went off track. If you have any more, I mean. 
+**Justin** *[41:45]*: We're dealing with Brazil prices. It's un American. You know Geno, you should continue the 940 story. We completely went off track. If you have any more, I mean. 
 **Geno** *[42:04]*: That's, that's most of it. We kind of. Like I said it was a perfectly cromulent car. 
 **Justin** *[42:09]*: There's really not much with it. It just was a good road trip with a good car. 
 **Geno** *[42:13]*: The car drove great. Honestly. If you have a chance to get a 940 Turbo sedan in decent condition and throw some Bilstein HDs Koni sway or not Coney Bilstein HD's IPD sways and springs on it and drive it around do so you won't regret it. 
