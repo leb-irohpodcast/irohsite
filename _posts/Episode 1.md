@@ -1,10 +1,10 @@
-# IROH Episode 1 The Gallic Lion Across America.mp3
+# Episode 1 - The Gallic Lion Across America
 
-**Meeting Date:** 2nd Jun, 2026 - 4:21 PM
+**[Link:](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
 
 ---
 
-**Caleb** *[00:01]*: Good evening and welcome to the International race of Hamptons. Coming to you live from where you get your podcast. I'm Caleb and I'm joined tonight with Justin and Gino. 
+**Caleb** *[00:01]*: Good evening and welcome to the International race of Hammpions. Coming to you live from where you get your podcast. I'm Caleb and I'm joined tonight with Justin and Geno. 
 **Justin** *[00:13]*: Hey there. 
 **Caleb** *[00:13]*: We'll be talking about the Gaelic line going across America. So,. 
 **Justin** *[00:24]*: Yeah, it's one way to put it. So, yeah, we are talking about a Peugeot of note. There are many in the world, I'm sure, but this is mine, or was mine. So I guess I'll just get started with the first. I know, like, I came into contact with it. So this was back in, like, I think, 2017. Ish. My. One of my good friends, he was going to college in North Carolina, and he had a girlfriend who was going to college in California, and he flew out there one summer to be with her for a couple weeks. And like, halfway through the first weekend, they broke up. So. And it was messy, so he had nowhere to stay. And it was going to be very expensive to book a flight back on short notice, so. 
