@@ -1,6 +1,6 @@
-#Episode 03 - A Perfectly Cromulent 940
+# Episode 03 - A Perfectly Cromulent 940
 
-**[Link:](https://pinecast.com/listen/41b0901f-ae5b-45bd-b5a9-b8066a2d370e.mp3)**
+**[Episode Link](https://pinecast.com/listen/41b0901f-ae5b-45bd-b5a9-b8066a2d370e.mp3)**
 
 ---
 
