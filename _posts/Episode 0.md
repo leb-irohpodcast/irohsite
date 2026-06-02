@@ -1,6 +1,6 @@
-# IROH Episode 0 - The International Race of Hammpions (1).mp3
+# IROH Episode 0 - Weird Cars, Pt 1.mp3
 
-**Meeting Date:** 2nd Jun, 2026 - 4:21 PM
+**[Link:](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
 
 ---
 
@@ -179,5 +179,5 @@
 **Justin** *[27:12]*: Yeah, maybe it'll be about my Peugeot road trip or something. 
 **Caleb** *[27:15]*: I think that should be good. I think the Gaelic lion road trip. 
 **Justin** *[27:20]*: Yeah. 
-**Caleb** *[27:23]*: So on that note, we will leave you. We'll leave y'. All. And don't forget to check out our sponsor, Dewey. Cheat them. And Howe Law Attorneys at Law. Do we cheat them? And, oh, how do we. 
+**Caleb** *[27:23]*: So on that note, we will leave you. We'll leave y'. All. And don't forget to check out our sponsor, Dewey, Cheatham and Howe Law Attorneys at Law. Do we cheat them? And, oh, how do we. 
 **Justin** *[27:37]*: Don't forget to check your oil level. It's probably low. 
