@@ -1,4 +1,4 @@
-# IROH Episode 0 - Weird Cars, Pt 1.mp3
+# Episode 0 - Weird Cars, Pt 1
 
 **[Link:](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
 
