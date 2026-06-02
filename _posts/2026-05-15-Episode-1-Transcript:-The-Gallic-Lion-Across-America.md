@@ -1,6 +1,6 @@
-# Episode 1 - The Gallic Lion Across America
+# The International Race of Hammpions Episode 01 - The Gallic Lion Across America
 
-**[Link:](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
+**[Episode Link](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
 
 ---
 
