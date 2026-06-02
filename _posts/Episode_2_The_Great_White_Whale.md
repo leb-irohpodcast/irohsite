@@ -1,10 +1,10 @@
-# Riverside Episode 02 International Race of Champions.mp3
+# Episode 2: The Great White Whale
 
-**Meeting Date:** 2nd Jun, 2026 - 4:21 PM
+**[Link:](https://pinecast.com/listen/9995ac19-9619-412d-a17d-dd0be7dfa74b.mp3)**
 
 ---
 
-**Caleb** *[00:01]*: Good evening and welcome to the international race of Hampians. Coming to you live from where you get your podcast. Tonight's episode, the Great White Whale, is brought to you by Gino Justin and I'm Caleb. So let's get started. So the great white whale, the first of the great white whales, I should Say was a 1990 Volvo 740 Turbo Wagon, which I'm sure none of us have had experiences with dumb old Volvos before. Not a single. 
+**Caleb** *[00:01]*: Good evening and welcome to the International Race of Hammpions, coming to you live from where you get your podcast. Tonight's episode, the Great White Whale, is brought to you by Geno Justin and I'm Caleb. So let's get started. So the great white whale, the first of the great white whales, I should Say was a 1990 Volvo 740 Turbo Wagon, which I'm sure none of us have had experiences with dumb old Volvos before. Not a single. 
 **Justin** *[00:44]*: No, not at all. 
 **Caleb** *[00:46]*: No. I mean, so, I mean, I'm a. 
 **Justin** *[00:54]*: Fan, but. 
@@ -42,7 +42,7 @@
 **Caleb** *[16:55]*: There ain't a lot of slowing for how much my foot is going. 
 **Justin** *[17:03]*: It's fine. You don't need brakes. 
 **Caleb** *[17:05]*: The rush hour in Knoxville is coming up real fast, coming up an awful lot faster than I want to. But anyway, I figure out that, you know, if I push the pedal down fast enough, I've got enough braking force to get the thing to slow down. So, you know, I do, and I get there and, you know, I park, you know, in front of, you know, building on UT's campus, and I get out, shut the door, lock it, and the thing just starts pissing, cooling all over a damn parking lot, marking its territory, which, I mean, okay, fair enough. You know, I've been running 110 up I75 for hours. So, I mean, it needed a break and I did, too. But went and got dinner, went back to my car, reached in. 
-**Caleb** *[17:58]*: Oh, as Gino knows, the you can't tighten the overflow cap too much on a red block because if you crank them down, it ain't good. So anyway, what happened? You know, some idiot, most likely me, had cranked the coolant cap down a little bit too much and so you backed her off. I had a spare gray cap in my trunk. So on back a car. So swapped out for a gray cap and all good. Head on up to Oak Ridge again. She's got coolant in her, but still not doing too good on the break in front and get there, you know, hang out with my aunt for a little bit, catch some Z's, get up to Harlem the next day. And, man, I get up to Harlan. It's the hottest summer in 50 years up there. 
+**Caleb** *[17:58]*: Oh, as Geno knows, the you can't tighten the overflow cap too much on a red block because if you crank them down, it ain't good. So anyway, what happened? You know, some idiot, most likely me, had cranked the coolant cap down a little bit too much and so you backed her off. I had a spare gray cap in my trunk. So on back a car. So swapped out for a gray cap and all good. Head on up to Oak Ridge again. She's got coolant in her, but still not doing too good on the break in front and get there, you know, hang out with my aunt for a little bit, catch some Z's, get up to Harlem the next day. And, man, I get up to Harlan. It's the hottest summer in 50 years up there. 
 **Caleb** *[19:02]*: When I get there, it's 115 degrees in the shade, speed, and it's like 43, 44 for those who speak metric and yours are wagon out there and go record my bluegrass festival. It's so hot, my phone is shutting off for overheating in the shade. And I was carrying a Nokia at the time. Like, it's too hot for a Nokia. And that's when you know. That's when you know. And yet I get professional recorded and, you know, overnight lows get down to about 92 as I'm camping in the back of this station wagon that does not have tinted windows. So it's still got all that residual heat from the day. And. But, you know, we get it done and I get it recorded. 
 **Caleb** *[20:05]*: And I'm like, you know, I'm just going to cut across Kentucky and take 65 down because I got buddies in Nashville, I got friends, and I'm okay, I'm taking it sensible. My brakes ain't great. I can get the car to stop, but the brakes ain't doing too great. So, you know, if I hold the pedal down, it starts sinking to the floor, so I should be careful. And I'm coming out of Bowling Green and there are some folks, you know, with, you know, hot fancy sports cars, you know, running a little bit over a limit. And I'm like, well, if they can, I can too. So I start hanging with them. And by this point you know, I'd put a G valve on it. Which valve? Manual boost controller for those of turbo brick. Infamy. And this thing I've got, it's turned up. 
 **Caleb** *[21:10]*: It's around about 15 pounds of boost or so. And I got hot, I got bigger injectors and you know, program chip, guide ship, computer, all that. You know, I'm hot stuff and. Which ain't the brightest thing to be done when you've got brake problems and you're coming up on the Tennessee state line where the troopers like to hang out. But I guess I get her back off before I get the state line and get home and give brakes all fixed and stuff and you know, set off for another adventure down to Purvis, Mississippi, which, thank the Lord it was an indoor festival, so it was air conditioned bluegrass. That didn't mean I wasn't camping in the heat. 
@@ -78,7 +78,7 @@
 **Justin** *[31:54]*: And you said three 740s. 
 **Caleb** *[31:57]*: Three 740s, two sedans, one wagon, and. 
 **Justin** *[32:03]*: They're all just called 740s, though. It's not like a 740. It's not like a 240 where the model numbers do. Okay, yeah. All right. 
-**Caleb** *[32:11]*: Volvo people kind of refer to them like that. But it never actually came with a badge that said it. Oh. So what is my average. I'm doing the math and Gino, you get to do this exercise next. What is your average Volvo? 
+**Caleb** *[32:11]*: Volvo people kind of refer to them like that. But it never actually came with a badge that said it. Oh. So what is my average. I'm doing the math and Geno, you get to do this exercise next. What is your average Volvo? 
 **Justin** *[32:30]*: All right, I'm going to leave out the S60 at first. 
 **Caleb** *[32:34]*: Okay, so what is my average rear wheel drive Volvo? Because the S60 is my only wrong wheel drive. 
 **Justin** *[32:41]*: All right, so we got 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. So all of them together added up is 5,009 and then divided by 12. 417. 
@@ -108,7 +108,7 @@
 **Justin** *[35:13]*: Yeah, real quick. 
 **Geno** *[35:15]*: All right, so 1242, 3, 2 44s, 1 2, 4 5, 2 780s. 1 943, 960S. 
 **Justin** *[35:32]*: All right, cool. Let me figure this out. 
-**Caleb** *[35:34]*: And fun fact, the 940 on that list gets counted twice because it was on my list and his. Ms. Wagner passed from Gino to me to my Uncle Bob. 
+**Caleb** *[35:34]*: And fun fact, the 940 on that list gets counted twice because it was on my list and his. Ms. Wagner passed from Geno to me to my Uncle Bob. 
 **Justin** *[36:01]*: All right, so that's 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. 635 And a half. So is there a Volvo 6 something? 
 **Geno** *[36:23]*: I don't think so. There's an 8. 
 **Caleb** *[36:27]*: Yeah, but you wait. 
@@ -204,13 +204,13 @@
 **Caleb** *[55:59]*: With. 
 **Justin** *[55:59]*: With. 
 **Caleb** *[56:00]*: I haven't. 
-**Justin** *[56:01]*: I. I haven't had any oil issues recently. I haven't seen anyone with any real oil issues recently. I've seen mostly coolant issues. So you know what? I'm going to revise it to check your coolant. Zid's probably low. 
+**Justin** *[56:01]*: I. I haven't had any oil issues recently. I haven't seen anyone with any real oil issues recently. I've seen mostly coolant issues. So you know what? I'm going to revise it to check your coolant. it's probably low. 
 **Caleb** *[56:13]*: You know, weirdly enough, the day that we recorded the first episode, a friend of mine down here has a Kia Karen's, which is the local equivalent of a Rondo, and he literally got home, put in, you know, his apartments, parking garage, got out of it, and the thing literally had started pissing oil all over the parking garage about halfway down the ramp down to his parking space. So, yeah, you should probably check your oil. Right? 
 **Justin** *[56:49]*: Check your oil and check your coolant. 
 **Caleb** *[56:51]*: Just. 
 **Justin** *[56:51]*: Just check your fluids. 
 **Caleb** *[56:52]*: Yeah, check your fluids. If you ain't changed your brake fluid recently, it's probably due. 
 **Justin** *[56:58]*: Yeah, that for sure. 
-**Caleb** *[57:01]*: So if anyone's got any questions, comments, or just general commentary over the podcast or, you know, if you just want to write us a letter and tell us how much you love us and. Or hate us, please send an email to Mailbag. That is M A I L B A G@iroPodcast.com I repeat, Mailbagast.com and on that note, I am Caleb. 
-**Geno** *[57:34]*: And I'm. 
-**Caleb** *[57:34]*: Gino, and we wish you all a good week. Bye. 
+**Caleb** *[57:01]*: So if anyone's got any questions, comments, or just general commentary over the podcast or, you know, if you just want to write us a letter and tell us how much you love us and. Or hate us, please send an email to Mailbag. That is, mailbag@irohpodcast.com I repeat, mailbag@irohpodcast.com and on that note, I am Caleb. 
+**Geno** *[57:34]*: And I'm Geno,
+**Caleb** *[57:34]*:  and we wish you all a good week. Bye. 
