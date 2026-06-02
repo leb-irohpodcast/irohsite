@@ -1,4 +1,4 @@
-# The International Race of Hammpions Episode 2: The Great White Whale
+# The International Race of Hammpions Episode 02: The Great White Whale
 
 **[Episode Link](https://pinecast.com/listen/9995ac19-9619-412d-a17d-dd0be7dfa74b.mp3)**
 
