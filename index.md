@@ -6,11 +6,11 @@ The episodes are listed below, and our mailbag is open for commentary at mailbag
 
 Episode List:  
 [Trailer](https://pinecast.com/listen/58a7ce50-348a-4a00-8cb9-1de8637f53a2.mp3)  
-[Episode 0: Weird Cars Pt 1](https://pinecast.com/listen/361039de-1840-4275-9be9-ede97dd12696.mp3)  
+[Episode 0: Weird Cars Pt. 1](https://pinecast.com/listen/361039de-1840-4275-9be9-ede97dd12696.mp3)  
 [Episode 1: The Gallic Lion Across America](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)  
 [Episode 2: The Great White Whale](https://pinecast.com/listen/9995ac19-9619-412d-a17d-dd0be7dfa74b.mp3)  
 [Episode 3: A Perfectly Cromulent 940](https://pinecast.com/listen/41b0901f-ae5b-45bd-b5a9-b8066a2d370e.mp3)  
-
+[Episode 4: Weird Cars Pt. 2](https://pinecast.com/listen/f4e8052d-c962-4179-a1cf-8a0bab524bf2.mp3)  
 
 Player:  
 <iframe src="https://pinecast.com/embed/player_playlist/iroh?color.primary=%23ffffff&amp;color.secondary=%23cbd3da&amp;color.accent=%230066ff" border="0" style="width:100%;border:0" height="270"></iframe>
