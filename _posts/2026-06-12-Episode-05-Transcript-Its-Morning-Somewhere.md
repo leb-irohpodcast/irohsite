@@ -1,6 +1,6 @@
 # The International Race of Hammpions Episode 05 - It's Morning Somewhere
 
-**[Episode Link](https://pinecast.com/listen/ce666fa1-b391-4ee7-9045-86c2836cca59.mp3)**
+**[Episode Link](https://op3.dev/e/pinecast.com/listen/ce666fa1-b391-4ee7-9045-86c2836cca59.mp3)**
 
 ---
 
