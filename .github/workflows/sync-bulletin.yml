@@ -1,20 +1,13 @@
-name: Sync broadcasts and deploy website
+name: Refresh Network Bulletin
 
 on:
-  push:
-    branches:
-      - main
-
   workflow_dispatch:
 
   schedule:
-    # Checks every 15 minutes around the normal Friday release window.
+    # Refresh the Bluesky-powered Network Bulletin every 30 minutes. The
+    # offset keeps it away from the normal Friday RSS release checks.
     # GitHub schedules use UTC.
-    - cron: "7,22,37,52 3-5 * * 5"
-
-    # Full fallback refresh for specials, delayed releases, transcripts and
-    # scheduled poll changes. The Network Bulletin has its own faster job.
-    - cron: "17 */6 * * *"
+    - cron: "11,41 * * * *"
 
 permissions:
   contents: write
@@ -23,7 +16,7 @@ permissions:
 
 concurrency:
   group: github-pages
-  # Let an in-progress bulletin deployment finish before a full RSS deployment.
+  # Queue behind a full RSS deployment instead of cancelling it.
   cancel-in-progress: false
 
 jobs:
@@ -42,42 +35,29 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Refresh broadcast, bulletin and poll data
-        run: python scripts/sync_podcast.py
+      - name: Refresh the Network Bulletin
+        run: python scripts/sync_podcast.py --bulletin-only
 
-      - name: Check whether station data changed
+      - name: Check whether the bulletin changed
         id: state
-        env:
-          EVENT_NAME: ${{ github.event_name }}
         run: |
-          git status --porcelain -- _data/episodes.json _data/network_bulletin.json _data/current_poll.json broadcasts transcripts > /tmp/episode-status
+          git status --porcelain -- _data/network_bulletin.json > /tmp/bulletin-status
 
-          if [ -s /tmp/episode-status ]; then
-            echo "feed_changed=true" >> "$GITHUB_OUTPUT"
+          if [ -s /tmp/bulletin-status ]; then
+            echo "bulletin_changed=true" >> "$GITHUB_OUTPUT"
             echo "should_deploy=true" >> "$GITHUB_OUTPUT"
           else
-            echo "feed_changed=false" >> "$GITHUB_OUTPUT"
-
-            if [ "$EVENT_NAME" = "schedule" ]; then
-              echo "should_deploy=false" >> "$GITHUB_OUTPUT"
-            else
-              echo "should_deploy=true" >> "$GITHUB_OUTPUT"
-            fi
+            echo "bulletin_changed=false" >> "$GITHUB_OUTPUT"
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Save updated station data and transcripts
-        if: steps.state.outputs.feed_changed == 'true'
+      - name: Save the updated Network Bulletin
+        if: steps.state.outputs.bulletin_changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/episodes.json _data/network_bulletin.json _data/current_poll.json
-          if [ -d broadcasts ]; then
-            git add broadcasts
-          fi
-          if [ -d transcripts ]; then
-            git add transcripts
-          fi
-          git commit -m "Update broadcasts and station data"
+          git add _data/network_bulletin.json
+          git commit -m "Update Network Bulletin [skip ci]"
           git push
 
       - name: Configure GitHub Pages

@@ -3,6 +3,7 @@
 import json
 import os
 import re
+import sys
 import unicodedata
 from datetime import date, datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -654,6 +655,11 @@ def remove_stale_broadcast_pages(active_pages):
         if not any(page.parent.iterdir()):
             page.parent.rmdir()
         print(f"Removed stale broadcast page: {page}")
+
+
+if "--bulletin-only" in sys.argv[1:]:
+    update_network_bulletin()
+    raise SystemExit(0)
 
 
 rss_xml = fetch_text(RSS_URL)
