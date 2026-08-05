@@ -4,23 +4,30 @@ import json
 import os
 import re
 import unicodedata
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import escape as html_escape
 from html import unescape as html_unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urljoin
+from urllib.parse import urlencode, urljoin
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
 
 RSS_URL = "https://pinecast.com/feed/iroh"
 OUTPUT_FILE = Path("_data/episodes.json")
+BULLETIN_OUTPUT_FILE = Path("_data/network_bulletin.json")
+POLL_BANK_FILE = Path("_data/polls.json")
+CURRENT_POLL_FILE = Path("_data/current_poll.json")
 TRANSCRIPT_DIRECTORY = Path("transcripts")
 POST_DIRECTORY = Path("_posts")
 REFRESH_TRANSCRIPTS = os.environ.get("REFRESH_TRANSCRIPTS") == "1"
+
+BLUESKY_HANDLE = "irohpodcast.com"
+BLUESKY_FEED_URL = "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+BLUESKY_BULLETIN_LIMIT = 3
 
 ITUNES = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
 CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
@@ -68,6 +75,158 @@ def fetch_text(url):
     )
     with urlopen(request, timeout=30) as response:
         return response.read().decode("utf-8", errors="replace")
+
+
+def bluesky_post_url(uri):
+    record_key = uri.rsplit("/", 1)[-1]
+    if not record_key or record_key == uri:
+        return f"https://bsky.app/profile/{BLUESKY_HANDLE}"
+    return f"https://bsky.app/profile/{BLUESKY_HANDLE}/post/{record_key}"
+
+
+def update_network_bulletin():
+    query = urlencode(
+        {
+            "actor": BLUESKY_HANDLE,
+            "filter": "posts_no_replies",
+            "limit": 12,
+        }
+    )
+    payload = json.loads(fetch_text(f"{BLUESKY_FEED_URL}?{query}"))
+    posts = []
+
+    for entry in payload.get("feed", []):
+        post = entry.get("post") or {}
+        author = post.get("author") or {}
+        record = post.get("record") or {}
+
+        # The author feed may contain reposts. The bulletin should contain only
+        # original public dispatches published by the IROH account.
+        if author.get("handle") != BLUESKY_HANDLE or entry.get("reason"):
+            continue
+        if record.get("reply"):
+            continue
+
+        text = html_unescape(record.get("text") or "").strip()
+        created_at = record.get("createdAt") or post.get("indexedAt") or ""
+        uri = post.get("uri") or ""
+
+        if not text or not created_at:
+            continue
+
+        posts.append(
+            {
+                "text": text,
+                "created_at": created_at,
+                "url": bluesky_post_url(uri),
+            }
+        )
+
+        if len(posts) == BLUESKY_BULLETIN_LIMIT:
+            break
+
+    bulletin = {
+        "source_name": "IROH on Bluesky",
+        "source_url": f"https://bsky.app/profile/{BLUESKY_HANDLE}",
+        "updated_at": posts[0]["created_at"] if posts else "",
+        "posts": posts,
+    }
+
+    BULLETIN_OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    BULLETIN_OUTPUT_FILE.write_text(
+        json.dumps(bulletin, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(
+        f"Updated {BULLETIN_OUTPUT_FILE} with {len(posts)} Bluesky dispatches."
+    )
+
+
+def write_current_poll(current_poll):
+    CURRENT_POLL_FILE.parent.mkdir(parents=True, exist_ok=True)
+    CURRENT_POLL_FILE.write_text(
+        json.dumps(current_poll, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    status = current_poll["id"] if current_poll["enabled"] else "disabled"
+    print(f"Updated {CURRENT_POLL_FILE}; listener poll is {status}.")
+
+
+def disabled_poll():
+    return {
+        "enabled": False,
+        "id": "",
+        "starts": "",
+        "question": "",
+        "options": [],
+    }
+
+
+def update_current_poll():
+    if not POLL_BANK_FILE.exists():
+        write_current_poll(disabled_poll())
+        return
+
+    bank = json.loads(POLL_BANK_FILE.read_text(encoding="utf-8"))
+    enabled = bank.get("enabled") is True
+
+    # While the bank is being assembled, the disabled switch keeps the poll
+    # off the site and allows incomplete future drafts without breaking builds.
+    if not enabled:
+        write_current_poll(disabled_poll())
+        return
+
+    scheduled_polls = bank.get("polls") or []
+    eligible_polls = []
+    poll_ids = set()
+
+    for poll in scheduled_polls:
+        poll_id = str(poll.get("id") or "").strip()
+        starts = str(poll.get("starts") or "").strip()
+        question = str(poll.get("question") or "").strip()
+        options = [
+            str(option).strip()
+            for option in (poll.get("options") or [])
+            if str(option).strip()
+        ]
+
+        if not poll_id or not starts or not question or len(options) < 2:
+            raise ValueError(
+                "Each scheduled poll needs an id, starts date, question, "
+                "and at least two options."
+            )
+        if poll_id in poll_ids:
+            raise ValueError(f"Duplicate poll id: {poll_id}")
+        poll_ids.add(poll_id)
+
+        try:
+            starts_date = date.fromisoformat(starts)
+        except ValueError as error:
+            raise ValueError(
+                f"Poll {poll_id} has an invalid starts date; use YYYY-MM-DD."
+            ) from error
+
+        if starts_date <= datetime.now(timezone.utc).date():
+            eligible_polls.append(
+                {
+                    "id": poll_id,
+                    "starts": starts,
+                    "question": question,
+                    "options": options,
+                    "_starts_date": starts_date,
+                }
+            )
+
+    eligible_polls.sort(key=lambda poll: poll["_starts_date"])
+    selected_poll = eligible_polls[-1] if enabled and eligible_polls else None
+
+    if selected_poll:
+        del selected_poll["_starts_date"]
+        current_poll = {"enabled": True, **selected_poll}
+    else:
+        current_poll = disabled_poll()
+
+    write_current_poll(current_poll)
 
 
 class TranscriptLinkFinder(HTMLParser):
@@ -495,3 +654,12 @@ OUTPUT_FILE.write_text(
 )
 
 print(f"Updated {OUTPUT_FILE} with {len(episodes)} episodes.")
+
+try:
+    update_network_bulletin()
+except (HTTPError, URLError, TimeoutError, UnicodeError, ValueError, json.JSONDecodeError) as error:
+    # A temporary Bluesky outage should not prevent episode and transcript
+    # updates. Preserve the last successful bulletin already in the repository.
+    print(f"Network bulletin unavailable; keeping the previous copy: {error}")
+
+update_current_poll()

@@ -1,4 +1,4 @@
-name: Sync podcast and deploy website
+name: Sync broadcasts and deploy website
 
 on:
   push:
@@ -12,8 +12,9 @@ on:
     # GitHub schedules use UTC.
     - cron: "7,22,37,52 3-5 * * 5"
 
-    # Daily fallback for specials and delayed releases.
-    - cron: "17 9 * * *"
+    # Refresh station data throughout the day, while also providing a fallback
+    # for specials, delayed releases and scheduled poll changes.
+    - cron: "17 */6 * * *"
 
 permissions:
   contents: write
@@ -40,15 +41,15 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Read the IROH RSS feed
+      - name: Refresh broadcast, bulletin and poll data
         run: python scripts/sync_podcast.py
 
-      - name: Check whether anything changed
+      - name: Check whether station data changed
         id: state
         env:
           EVENT_NAME: ${{ github.event_name }}
         run: |
-          git status --porcelain -- _data/episodes.json transcripts > /tmp/episode-status
+          git status --porcelain -- _data/episodes.json _data/network_bulletin.json _data/current_poll.json transcripts > /tmp/episode-status
 
           if [ -s /tmp/episode-status ]; then
             echo "feed_changed=true" >> "$GITHUB_OUTPUT"
@@ -63,16 +64,16 @@ jobs:
             fi
           fi
 
-      - name: Save updated episode data and transcripts
+      - name: Save updated station data and transcripts
         if: steps.state.outputs.feed_changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/episodes.json
+          git add _data/episodes.json _data/network_bulletin.json _data/current_poll.json
           if [ -d transcripts ]; then
             git add transcripts
           fi
-          git commit -m "Update episodes from RSS feed"
+          git commit -m "Update broadcasts and station data"
           git push
 
       - name: Configure GitHub Pages

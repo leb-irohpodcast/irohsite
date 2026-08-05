@@ -6,6 +6,9 @@ image: /_images/IROH_Banner3.png
 
 {% assign episodes = site.data.episodes.episodes %}
 {% assign latest = episodes | first %}
+{% assign bulletin = site.data.network_bulletin %}
+{% assign bulletin_posts = bulletin.posts %}
+{% assign active_poll = site.data.current_poll %}
 
 {% include iroh-masthead.html %}
 
@@ -59,9 +62,15 @@ image: /_images/IROH_Banner3.png
           {% endif %}
 
           {% if latest.audio_url != "" %}
-          <audio controls preload="metadata" src="{{ latest.audio_url | escape }}">
-            <a href="{{ latest.audio_url | escape }}">Listen to the episode</a>
-          </audio>
+          <div class="listen-console">
+            <p class="listen-console__label">
+              <span>HBI streaming audio</span>
+              <strong>Listen now</strong>
+            </p>
+            <audio controls preload="metadata" src="{{ latest.audio_url | escape }}">
+              <a href="{{ latest.audio_url | escape }}">Listen to the episode</a>
+            </audio>
+          </div>
           {% endif %}
 
           <p class="broadcast-links">
@@ -115,9 +124,15 @@ image: /_images/IROH_Banner3.png
             </p>
 
             {% if episode.audio_url != "" %}
-            <audio controls preload="metadata" src="{{ episode.audio_url | escape }}">
-              <a href="{{ episode.audio_url | escape }}">Listen to the episode</a>
-            </audio>
+            <div class="listen-console listen-console--compact">
+              <p class="listen-console__label">
+                <span>HBI audio archive</span>
+                <strong>Listen now</strong>
+              </p>
+              <audio controls preload="metadata" src="{{ episode.audio_url | escape }}">
+                <a href="{{ episode.audio_url | escape }}">Listen to the episode</a>
+              </audio>
+            </div>
             {% endif %}
 
             <p class="broadcast-links">
@@ -159,6 +174,94 @@ image: /_images/IROH_Banner3.png
       </div>
     </section>
 
+    <section class="radio-box" id="network-desk">
+      <h2 class="radio-box__title">HBI Network Desk</h2>
+      <div class="radio-box__content network-desk">
+        <p class="network-status">
+          <span class="live-light" aria-hidden="true"></span>
+          <strong>Network status: On the air</strong>
+        </p>
+
+        <dl class="bureau-clocks" aria-label="Current time at each HBI bureau">
+          <div>
+            <dt>Rio de Janeiro</dt>
+            <dd><time data-bureau-clock="America/Sao_Paulo">--:--</time></dd>
+          </div>
+          <div>
+            <dt>Knoxville</dt>
+            <dd><time data-bureau-clock="America/New_York">--:--</time></dd>
+          </div>
+          <div>
+            <dt>Twin Cities</dt>
+            <dd><time data-bureau-clock="America/Chicago">--:--</time></dd>
+          </div>
+        </dl>
+
+        <p class="desk-update">
+          Network listings last updated<br>
+          <time datetime="{{ site.time | date_to_xmlschema }}">
+            {{ site.time | date: "%B %-d, %Y at %H:%M UTC" }}
+          </time>
+        </p>
+      </div>
+    </section>
+
+    <section class="radio-box" id="network-bulletin">
+      <h2 class="radio-box__title">Network Bulletin</h2>
+      <div class="network-bulletin">
+        {% if bulletin_posts and bulletin_posts.size > 0 %}
+          {% for dispatch in bulletin_posts %}
+          <article class="bulletin-dispatch">
+            <p class="bulletin-date">
+              <time datetime="{{ dispatch.created_at }}">
+                {{ dispatch.created_at | date: "%b %-d, %Y · %-I:%M %p" }}
+              </time>
+            </p>
+            <p>{{ dispatch.text | truncatewords: 38 | escape | newline_to_br }}</p>
+            <p class="bulletin-link"><a href="{{ dispatch.url | escape }}">Read dispatch &raquo;</a></p>
+          </article>
+          {% endfor %}
+        {% else %}
+          <p class="bulletin-empty">The network wire is temporarily quiet.</p>
+        {% endif %}
+
+        <p class="bulletin-source">
+          <a href="{{ bulletin.source_url | default: 'https://bsky.app/profile/irohpodcast.com' }}">
+            More bulletins from IROH on Bluesky
+          </a>
+        </p>
+      </div>
+    </section>
+
+    {% comment %}
+      The Listener Poll is intentionally absent while polls.json has
+      "enabled": false. The scheduled poll structure and the former manual
+      question remain ready for use without publishing an unfinished poll.
+    {% endcomment %}
+    {% if active_poll.enabled %}
+    <section class="radio-box" id="listener-poll">
+      <h2 class="radio-box__title">Listener Poll</h2>
+      <form
+        class="listener-poll"
+        data-listener-poll
+        data-poll-id="{{ active_poll.id | escape }}"
+        data-poll-question="{{ active_poll.question | escape }}">
+        <fieldset>
+          <legend>{{ active_poll.question | escape }}</legend>
+          {% for option in active_poll.options %}
+          <label>
+            <input type="radio" name="poll-option" value="{{ option | escape }}">
+            {{ option | escape }}
+          </label>
+          {% endfor %}
+        </fieldset>
+        <button type="submit">Transmit ballot</button>
+        <p class="poll-explainer">Ballots are delivered through the HBI mailbag. Results are entirely unscientific.</p>
+        <p class="poll-status" data-poll-status role="status" hidden></p>
+      </form>
+    </section>
+    {% endif %}
+
     <section class="radio-box">
       <h2 class="radio-box__title">Hammpions Broadcast International</h2>
       <div class="radio-box__content station-identification">
@@ -172,21 +275,24 @@ image: /_images/IROH_Banner3.png
       </div>
     </section>
 
-    <section class="radio-box">
-      <h2 class="radio-box__title">HBI bureaus</h2>
+    <section class="radio-box" id="from-the-bureaus">
+      <h2 class="radio-box__title">From the Bureaus</h2>
       <div class="bureau-list">
-        <figure>
+        <article class="bureau-report">
           <img src="{{ '/_images/NewIROHLogo-BR.svg' | relative_url }}" alt="IROH Rio de Janeiro studio logo" loading="lazy">
-          <figcaption>Rio de Janeiro</figcaption>
-        </figure>
-        <figure>
+          <h3>Rio de Janeiro</h3>
+          <p><strong>Caleb</strong> reports from the Land That Stellantis Forgot.</p>
+        </article>
+        <article class="bureau-report">
           <img src="{{ '/_images/NewIROHLogo-TN.svg' | relative_url }}" alt="IROH Knoxville studio logo" loading="lazy">
-          <figcaption>Knoxville</figcaption>
-        </figure>
-        <figure>
+          <h3>Knoxville</h3>
+          <p><strong>Justin “The Juice”</strong> covers the Appalachian motoring desk.</p>
+        </article>
+        <article class="bureau-report">
           <img src="{{ '/_images/NewIROHLogo-MN.svg' | relative_url }}" alt="IROH Twin Cities studio logo" loading="lazy">
-          <figcaption>Twin Cities</figcaption>
-        </figure>
+          <h3>Twin Cities</h3>
+          <p><strong>Geno</strong> monitors fleet operations and northern dispatches.</p>
+        </article>
       </div>
     </section>
 

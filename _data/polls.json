@@ -1,0 +1,17 @@
+{
+  "enabled": false,
+  "instructions": "Keep enabled false until the poll bank is ready. Add future polls to the polls array, then change enabled to true. The most recent poll whose starts date has arrived becomes active.",
+  "polls": [
+    {
+      "id": "bureau-special-assignment",
+      "starts": "2026-08-07",
+      "question": "Which bureau should receive the next HBI special assignment?",
+      "options": [
+        "Rio de Janeiro",
+        "Knoxville",
+        "Twin Cities",
+        "The Ruling Council"
+      ]
+    }
+  ]
+}
