@@ -186,6 +186,30 @@ image: /_images/IROH_Banner3.png
       </div>
     </section>
 
+    <section class="radio-box" id="syndication-partners">
+      <h2 class="radio-box__title">Syndication Partners</h2>
+      <div class="radio-box__content syndication-partners">
+        <p class="syndication-group">Global distribution</p>
+        <ul class="link-list">
+          {% for partner in site.data.syndication_partners.directories %}
+          <li><a href="{{ partner.url | escape }}">{{ partner.name | escape }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <p class="syndication-group">Open-source receivers</p>
+        <ul class="link-list">
+          {% for partner in site.data.syndication_partners.open_source %}
+          <li><a href="{{ partner.url | escape }}">{{ partner.name | escape }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <p class="syndication-rss">
+          <a href="https://pinecast.com/feed/iroh">Broadcast RSS Feed</a>
+          for Kasts and other compatible receivers.
+        </p>
+      </div>
+    </section>
+
     <section class="radio-box" id="network-desk">
       <h2 class="radio-box__title">HBI Network Desk</h2>
       <div class="radio-box__content network-desk">
@@ -225,8 +249,8 @@ image: /_images/IROH_Banner3.png
           {% for dispatch in bulletin_posts %}
           <article class="bulletin-dispatch">
             <p class="bulletin-date">
-              <time datetime="{{ dispatch.created_at }}">
-                {{ dispatch.created_at | date: "%b %-d, %Y · %-I:%M %p" }}
+              <time datetime="{{ dispatch.created_at }}" data-bulletin-time>
+                {{ dispatch.created_at | date: "%b %-d, %Y · %-I:%M %p UTC" }}
               </time>
             </p>
             <p>{{ dispatch.text | truncatewords: 38 | escape | newline_to_br }}</p>
@@ -293,7 +317,7 @@ image: /_images/IROH_Banner3.png
         <article class="bureau-report">
           <img src="{{ '/_images/NewIROHLogo-BR.svg' | relative_url }}" alt="IROH Rio de Janeiro studio logo" loading="lazy">
           <h3>Rio de Janeiro</h3>
-          <p><strong>Caleb</strong> reports from the Land That Stellantis Forgot.</p>
+          <p><strong>Caleb</strong> reports in from the Sixth Brazilian Republic.</p>
         </article>
         <article class="bureau-report">
           <img src="{{ '/_images/NewIROHLogo-TN.svg' | relative_url }}" alt="IROH Knoxville studio logo" loading="lazy">

@@ -1,9 +1,10 @@
 ---
 layout: default
 title: "Transcript: Episode 11: Bad Decisions and Great Music"
-description: "This morning's episode of The International Race of Hammpions is sponsored by Antonio's Italian Car Specialists in Lutts, TN. Tell 'em The HAMM sent you. In this episode, we reveal…"
+description: "This morning's episode of The International Race of Hammpions is sponsored by Antonio's Italian Car Specialists in Lutts, TN. Tell 'em The HAMM sent you."
 image: /_images/IROH_SocialLogo.png
 permalink: /transcripts/episode-11-bad-decisions-and-great-music/
+episode_path: "/broadcasts/episode-11-bad-decisions-and-great-music/"
 ---
 
 {% include iroh-masthead.html %}
@@ -19,9 +20,11 @@ permalink: /transcripts/episode-11-bad-decisions-and-great-music/
     </p>
     <audio controls preload="metadata" src="https://op3.dev/e/pinecast.com/listen/1f6a7b60-add0-480f-9e4b-8d879d6a88f7.mp3?source=rss&amp;ext=asset.mp3"></audio>
     <p class="broadcast-links">
+      <a href="{{ '/broadcasts/episode-11-bad-decisions-and-great-music/' | relative_url }}">Broadcast page and notes</a>
+      <span aria-hidden="true">|</span>
       <a href="https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-and-great-music/transcript">Original Pinecast transcript</a>
       <span aria-hidden="true">|</span>
-      <a href="{{ '/' | relative_url }}">Return to IROH</a>
+      <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
     </p>
   </header>
   <div class="transcript-copy">

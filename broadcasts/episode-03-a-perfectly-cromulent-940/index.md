@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 03: A Perfectly Cromulent 940"
-description: "Episode 3 Notes: Join Caleb, Geno, and Justin as they tell the tale of a road trip with Geno's brother's Volvo 940 as well as their thoughts on oil and more, all in this week's…"
+description: "Join Caleb, Geno, and Justin as they tell the tale of a road trip with Geno's brother's Volvo 940 as well as their thoughts on oil and more, all in this week's episode."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-03-a-perfectly-cromulent-940/
 podcast_episode: true
@@ -18,6 +18,5 @@ transcript_path: "/transcripts/episode-03-a-perfectly-cromulent-940/"
 transcript_source_url: ""
 ---
 
-<h1>Episode 3 Notes:</h1>
 <p>Join Caleb, Geno, and Justin as they tell the tale of a road trip with Geno's brother's Volvo 940 as well as their thoughts on oil and more, all in this week's episode.</p>
 <p>If you want to tell us why our choices of oil are wrong, sell us on the benefits of AMSOIL or other automotive snake oil, please write to us at mailbag [at] <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a></p>

@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 05: It's Morning Somewhere"
-description: "Episode 05: It's Morning Somewhere Caleb, Geno and Justin sit around talking about rust repair, winter tires, the Ferrari Luce, going to see a giant cross and more in this week's…"
+description: "Episode 05: It's Morning Somewhere Caleb, Geno and Justin sit around talking about rust repair, winter tires, the Ferrari Luce, going to see a giant cross and more in this week's exciting episode."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-05-it-s-morning-somewhere/
 podcast_episode: true
@@ -18,7 +18,7 @@ transcript_path: "/transcripts/episode-05-its-morning-somewhere/"
 transcript_source_url: ""
 ---
 
-<h1>Episode 05: It's Morning Somewhere</h1>
+<h3>Episode 05: It's Morning Somewhere</h3>
 <p>Caleb, Geno and Justin sit around talking about rust repair,  winter tires, the Ferrari Luce, going to see a giant cross and more in this week's exciting episode.</p>
 <p>As always, find us on Bluesky  <a href="https://bsky.app/profile/irohpodcast.com" rel="nofollow">https://bsky.app/profile/irohpodcast.com</a> or send us an email at mailbag [at] <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a> if you want to leave us a comment, tell us your worst automotive decision or more.</p>
 <p>Transcripts are now available at <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a>!</p>

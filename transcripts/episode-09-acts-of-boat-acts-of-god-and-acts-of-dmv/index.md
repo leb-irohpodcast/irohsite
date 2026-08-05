@@ -1,9 +1,10 @@
 ---
 layout: default
 title: "Transcript: Episode 09: Acts of Boat, Acts of God and Acts of DMV"
-description: ": With 226 watts of Pure Podcast Power, Episode 09 of The International Race of Hammpions is landing on your platform of choice. This week: Acts of Boat, Acts of God and Acts of…"
+description: "With 226 watts of Pure Podcast Power, Episode 09 of The International Race of Hammpions is landing on your platform of choice."
 image: /_images/IROH_SocialLogo.png
 permalink: /transcripts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/
+episode_path: "/broadcasts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/"
 ---
 
 {% include iroh-masthead.html %}
@@ -19,9 +20,11 @@ permalink: /transcripts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/
     </p>
     <audio controls preload="metadata" src="https://op3.dev/e/pinecast.com/listen/c1c998fd-9aba-4014-a47d-47260f2fc139.mp3?source=rss&amp;ext=asset.mp3"></audio>
     <p class="broadcast-links">
+      <a href="{{ '/broadcasts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/' | relative_url }}">Broadcast page and notes</a>
+      <span aria-hidden="true">|</span>
       <a href="https://pnc.st/s/iroh/c1c998fd/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/transcript">Original Pinecast transcript</a>
       <span aria-hidden="true">|</span>
-      <a href="{{ '/' | relative_url }}">Return to IROH</a>
+      <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
     </p>
   </header>
   <div class="transcript-copy">

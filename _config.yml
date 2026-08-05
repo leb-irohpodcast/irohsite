@@ -1,5 +1,6 @@
 theme: minima
-title: The International Race of Hammpions Show
+title: IROH
+tagline: Morning Radio on the World Wide Web
 description: "Multinational morning drive-time radio from Rio, Knoxville and the Twin Cities: automotive excellence, tales from beyond and the Global Fleet of Hammpions."
 url: https://irohpodcast.com
 lang: en-US
@@ -12,6 +13,9 @@ social:
   name: The International Race of Hammpions Show
   links:
     - https://bsky.app/profile/irohpodcast.com
+    - https://podcasts.apple.com/us/podcast/the-international-race-of-hammpions/id1869778891
+    - https://music.amazon.com/podcasts/57e2f473-c52d-4e11-b9d3-b117d32d3482/the-international-race-of-hammpions
+    - https://www.iheart.com/podcast/1310-the-international-race-of-317795267/
 
 plugins:
   - jekyll-seo-tag
@@ -21,6 +25,14 @@ plugins:
 # the studio artwork available at /_images/ on the finished site.
 include:
   - _images
+
+# Keep repository instructions and source-only files out of the public site and
+# generated sitemap.
+exclude:
+  - README.md
+  - README-APPLY.md
+  - LICENSE
+  - scripts
 
 # Prevent the homepage H1 from becoming a duplicate navigation link.
 titles_from_headings:

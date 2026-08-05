@@ -1,9 +1,10 @@
 ---
 layout: default
 title: "Transcript: Episode 12: Let's Play a Game..."
-description: "Justin \"The Juice\" discusses smashing back roads in a minivan and gets high on starting fluid, Geno devours more glizzies and downs Kurt Russell's mullet, all of the guys talk…"
+description: "Justin \"The Juice\" discusses smashing back roads in a minivan and gets high on starting fluid, Geno devours more glizzies and downs Kurt Russell's mullet, all of the guys talk barbecue and Caleb checks in from The Land that Stellantis Forgot."
 image: /_images/IROH_SocialLogo.png
 permalink: /transcripts/episode-12-let-s-play-a-game/
+episode_path: "/broadcasts/episode-12-let-s-play-a-game/"
 ---
 
 {% include iroh-masthead.html %}
@@ -19,9 +20,11 @@ permalink: /transcripts/episode-12-let-s-play-a-game/
     </p>
     <audio controls preload="metadata" src="https://op3.dev/e/pinecast.com/listen/ca16b359-d8fc-4cef-b3a1-a42bbc3fe30c.mp3?source=rss&amp;ext=asset.mp3"></audio>
     <p class="broadcast-links">
+      <a href="{{ '/broadcasts/episode-12-let-s-play-a-game/' | relative_url }}">Broadcast page and notes</a>
+      <span aria-hidden="true">|</span>
       <a href="https://pnc.st/s/iroh/ca16b359/episode-12-let-s-play-a-game-/transcript">Original Pinecast transcript</a>
       <span aria-hidden="true">|</span>
-      <a href="{{ '/' | relative_url }}">Return to IROH</a>
+      <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
     </p>
   </header>
   <div class="transcript-copy">

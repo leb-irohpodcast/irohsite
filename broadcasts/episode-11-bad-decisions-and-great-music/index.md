@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 11: Bad Decisions and Great Music"
-description: "This morning's episode of The International Race of Hammpions is sponsored by Antonio's Italian Car Specialists in Lutts, TN. Tell 'em The HAMM sent you. In this episode, we reveal…"
+description: "This morning's episode of The International Race of Hammpions is sponsored by Antonio's Italian Car Specialists in Lutts, TN. Tell 'em The HAMM sent you."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-11-bad-decisions-and-great-music/
 podcast_episode: true
@@ -18,12 +18,11 @@ transcript_path: "/transcripts/episode-11-bad-decisions-and-great-music/"
 transcript_source_url: "https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-and-great-music/transcript"
 ---
 
-<h1>Episode Notes</h1>
 <p>This morning's episode of The International Race of Hammpions is sponsored by Antonio's Italian Car Specialists in Lutts, TN. Tell 'em The HAMM sent you.</p>
 <p>In this episode, we reveal the new shop runner in the Brazilian studio, workshop the worst possible automotive engine swap, and discuss the greatest driving albums, in our not-so-humble opinions. As always, we have check-ins from The Reservoir Report and The Glizzy Gladiator of the Great Lakes. All of this and more, coming to you live from where you get your podcasts.</p>
 <p><em>The International Race of Hammpions</em> is a production of Hammpions Broadcast International.</p>
-<h1></h1>
-<h1>Caleb's Picks</h1>
+
+<h3>Caleb's Picks</h3>
 <ul>
 <li><em>Out Loud -</em> Boom Boom Satellites</li>
 <li><em>Gran Turismo -</em> The Cardigans</li>
@@ -36,7 +35,7 @@ transcript_source_url: "https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-
 <li><em>Ghost in the Shell: Stand Alone Complex O.S.T. -</em> Yoko Kanno</li>
 <li><em>Exit -</em> Tangerine Dream</li>
 </ul>
-<h1>Justin's Picks</h1>
+<h3>Justin's Picks</h3>
 <ul>
 <li><em>Songs for the Deaf</em> - Queens of the Stone Age</li>
 <li><em>Honestly, Nevermind -</em> Drake</li>
@@ -46,10 +45,10 @@ transcript_source_url: "https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-
 <li><em>Funeral Soundtrack #4 -</em> Destroy Boys</li>
 <li><em>Reload -</em> Metallica</li>
 <li>
-<h2><em>British Steel -</em> Judas Priest</h2>
+<h3><em>British Steel -</em> Judas Priest</h3>
 </li>
 </ul>
-<h1>Geno's Picks</h1>
+<h3>Geno's Picks</h3>
 <ul>
 <li><em>The Legend of Blacktop Jesus</em> - Andy Lipke / North Shore Trio</li>
 <li><em>The Animal Years</em> - Josh Ritter</li>
@@ -62,14 +61,14 @@ transcript_source_url: "https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-
 <li><em>Die Welt gehört dir</em> - Blümchen</li>
 <li><em>Autobahn</em> - Kraftwerk</li>
 </ul>
-<h1>Collective Picks</h1>
+<h3>Collective Picks</h3>
 <ul>
 <li><em>(Pronounced 'Lĕh-'nérd 'Skin-'nérd)</em> - Lynyrd Skynyrd</li>
 <li><em>Second Helping</em> - Lynyrd Skynyrd</li>
 <li><em>Nuthin’ Fancy</em> - Lynyrd Skynyrd</li>
 <li><em>Gimme Back My Bullets</em> - Lynyrd Skynyrd</li>
 </ul>
-<h1>General Picks</h1>
+<h3>General Picks</h3>
 <p>From Caleb - Public Enemy, Mogwai and Godspeed You! Black Emperor in general.</p>
 <p>From Justin - <em>Initial D</em>-style Eurobeat, Pendulum, early Three 6 Mafia</p>
 <p>From Geno - Tony Hawk's Pro Skater soundtrack and the GTA Vice City radio music</p><p><a href="https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-and-great-music/transcript">Read transcript</a></p><hr>

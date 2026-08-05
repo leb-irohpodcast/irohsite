@@ -691,6 +691,28 @@ audio {
   margin: 3px 0;
 }
 
+.syndication-group {
+  margin: 0 0 4px;
+  color: var(--hbi-red);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.syndication-group:not(:first-child) {
+  margin-top: 9px;
+  padding-top: 6px;
+  border-top: 1px dotted #7c8a95;
+}
+
+.syndication-rss {
+  margin: 8px 0 0;
+  padding-top: 6px;
+  border-top: 1px dotted #7c8a95;
+  font-size: 9px;
+}
+
 .archive-box {
   margin-bottom: 0;
 }

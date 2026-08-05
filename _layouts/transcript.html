@@ -4,11 +4,28 @@ layout: default
 
 {% include iroh-masthead.html %}
 
+{% assign transcript_episode = nil %}
+{% assign transcript_episode_number = page.iroh_episode | append: "" %}
+{% for episode in site.data.episodes.episodes %}
+  {% assign episode_number = episode.episode_number | append: "" %}
+  {% if episode_number == transcript_episode_number %}
+    {% assign transcript_episode = episode %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
 <article class="transcript-page legacy-transcript">
   <header class="transcript-header">
     <p class="broadcast-number">HBI transcript archive</p>
     <h1>{{ page.episode_title | default: page.title | escape }}</h1>
     <p class="transcript-subtitle">Original locally archived transcript</p>
+    {% if transcript_episode %}
+    <p class="broadcast-links">
+      <a href="{{ transcript_episode.episode_path | relative_url }}">Broadcast page and notes</a>
+      <span aria-hidden="true">|</span>
+      <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
+    </p>
+    {% endif %}
   </header>
 
   <div class="transcript-copy">

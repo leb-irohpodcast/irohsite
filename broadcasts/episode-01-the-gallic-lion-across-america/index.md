@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 01: The Gallic Lion Across America"
-description: "Episode 1: The Gallic Lion Across America Justin, Geno and Caleb deep dive into Peugeot ownership in the US, specifically Justin's old Peugeot 505 diesel along with the hijinks and…"
+description: "Episode 1: The Gallic Lion Across America Justin, Geno and Caleb deep dive into Peugeot ownership in the US, specifically Justin's old Peugeot 505 diesel along with the hijinks and shenanigans that went along with it."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-01-the-gallic-lion-across-america/
 podcast_episode: true
@@ -18,7 +18,7 @@ transcript_path: "/transcripts/episode-01-the-gallic-lion-across-america/"
 transcript_source_url: ""
 ---
 
-<h1>Episode 1: The Gallic Lion Across America</h1>
+<h3>Episode 1: The Gallic Lion Across America</h3>
 <p>Justin, Geno and Caleb deep dive into Peugeot ownership in the US, specifically Justin's old Peugeot 505 diesel along with the hijinks and shenanigans that went along with it. </p>
 <p>Caleb also goes into a quick anecdote about a rental Renault in the northeastern part of Brazil, while visiting some of his in-laws up there. </p>
 <p>As always, questions, commentary and feedback are welcome in our Mail Bag. mailbag [at] <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a></p>

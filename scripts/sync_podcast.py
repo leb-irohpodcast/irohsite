@@ -273,6 +273,35 @@ def find_transcript_url(description_html):
     return urljoin(RSS_URL, parser.transcript_url) if parser.transcript_url else ""
 
 
+def clean_description_html(description_html):
+    if not description_html:
+        return ""
+
+    cleaned = re.sub(
+        r"<h([1-6])\b[^>]*>\s*(?:Episode(?:\s+\d+)?|Broadcast)\s+Notes\s*:?\s*</h\1\s*>",
+        "",
+        description_html,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(
+        r"<h([1-6])\b[^>]*>\s*</h\1\s*>",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+
+    # Broadcast notes sit beneath an existing section heading. Normalize any
+    # top-level RSS headings so imported notes cannot create extra page H1s.
+    cleaned = re.sub(
+        r"<h[12](\b[^>]*)>",
+        r"<h3\1>",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"</h[12]\s*>", "</h3>", cleaned, flags=re.IGNORECASE)
+    return cleaned.strip()
+
+
 class EpisodeDescriptionParser(HTMLParser):
     BLOCK_TAGS = {
         "article",
@@ -312,7 +341,12 @@ def make_description_text(description_html):
     parser = EpisodeDescriptionParser()
     parser.feed(description_html)
     text = " ".join("".join(parser.parts).split())
-    text = re.sub(r"^(?:Episode|Broadcast)\s+Notes\s*", "", text, flags=re.IGNORECASE)
+    text = re.sub(
+        r"^(?:Episode(?:\s+\d+)?|Broadcast)\s+Notes\s*:?\s*",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
     text = re.sub(
         r"\s*Read transcript(?:\.{3}|…)?\s*$",
         "",
@@ -322,12 +356,27 @@ def make_description_text(description_html):
     return text.strip()
 
 
-def truncate_description(value, limit=180):
-    if len(value) <= limit:
+def summarize_description(value, target=180, minimum=80):
+    value = " ".join(str(value or "").split()).strip()
+    if len(value) <= target:
         return value
 
-    shortened = value[: limit + 1].rsplit(" ", 1)[0].rstrip(" ,.;:-")
-    return f"{shortened}…"
+    sentence_ends = [
+        match.end()
+        for match in re.finditer(r"[.!?](?:[\"'’”)]*)?(?=\s|$)", value)
+        if match.end() >= minimum
+    ]
+    preferred_ends = [end for end in sentence_ends if end <= target]
+
+    if preferred_ends:
+        return value[: preferred_ends[-1]].strip()
+    if sentence_ends:
+        return value[: sentence_ends[0]].strip()
+
+    # A feed description without sentence punctuation still needs a tidy,
+    # readable fallback instead of a visibly cut-off fragment.
+    shortened = value[: target + 1].rsplit(" ", 1)[0].rstrip(" ,.;:-")
+    return f"{shortened}."
 
 
 def iso_duration(value):
@@ -529,7 +578,7 @@ def write_transcript_page(episode, source_url, destination, permalink):
         raise ValueError("No transcript turns were found on the Pinecast page.")
 
     page_title = f"Transcript: {episode['title']}"
-    page_description = truncate_description(episode.get("description_text", ""))
+    page_description = summarize_description(episode.get("description_text", ""))
     lines = [
         "---",
         "layout: default",
@@ -537,6 +586,7 @@ def write_transcript_page(episode, source_url, destination, permalink):
         f"description: {json.dumps(page_description, ensure_ascii=False)}",
         "image: /_images/IROH_SocialLogo.png",
         f"permalink: {permalink}",
+        f"episode_path: {json.dumps(episode['episode_path'], ensure_ascii=False)}",
         "---",
         "",
         "{% include iroh-masthead.html %}",
@@ -564,9 +614,11 @@ def write_transcript_page(episode, source_url, destination, permalink):
             "    </p>",
             f'    <audio controls preload="metadata" src="{html_escape(episode["audio_url"], quote=True)}"></audio>',
             '    <p class="broadcast-links">',
+            f"      <a href=\"{{{{ '{episode['episode_path']}' | relative_url }}}}\">Broadcast page and notes</a>",
+            '      <span aria-hidden="true">|</span>',
             f'      <a href="{html_escape(source_url, quote=True)}">Original Pinecast transcript</a>',
             '      <span aria-hidden="true">|</span>',
-            '      <a href="{{ \'/\' | relative_url }}">Return to IROH</a>',
+            '      <a href="{{ \'/archive/\' | relative_url }}">Complete archive</a>',
             "    </p>",
             "  </header>",
             '  <div class="transcript-copy">',
@@ -592,7 +644,7 @@ def write_transcript_page(episode, source_url, destination, permalink):
 def write_broadcast_page(episode):
     broadcast_slug = make_slug(episode["title"])
     destination = BROADCAST_DIRECTORY / broadcast_slug / "index.md"
-    description = truncate_description(episode.get("description_text", ""))
+    description = summarize_description(episode.get("description_text", ""))
     if not description:
         description = (
             f"Listen to {episode['title']} from The International Race of "
@@ -696,7 +748,7 @@ for item in channel.findall("item"):
         else ""
     )
 
-    description = (
+    description = clean_description_html(
         get_text(item, f"{CONTENT}encoded")
         or get_text(item, "description")
     )

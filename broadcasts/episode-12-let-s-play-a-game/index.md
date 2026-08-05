@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 12: Let's Play a Game..."
-description: "Justin \"The Juice\" discusses smashing back roads in a minivan and gets high on starting fluid, Geno devours more glizzies and downs Kurt Russell's mullet, all of the guys talk…"
+description: "Justin \"The Juice\" discusses smashing back roads in a minivan and gets high on starting fluid, Geno devours more glizzies and downs Kurt Russell's mullet, all of the guys talk barbecue and Caleb checks in from The Land that Stellantis Forgot."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-12-let-s-play-a-game/
 podcast_episode: true
@@ -18,6 +18,5 @@ transcript_path: "/transcripts/episode-12-let-s-play-a-game/"
 transcript_source_url: "https://pnc.st/s/iroh/ca16b359/episode-12-let-s-play-a-game-/transcript"
 ---
 
-<h1>Episode Notes</h1>
 <p>Justin &quot;The Juice&quot; discusses smashing back roads in a minivan and gets high on starting fluid, Geno devours more glizzies and downs Kurt Russell's mullet, all of the guys talk barbecue and Caleb checks in from The Land that Stellantis Forgot.</p>
 <p>Finally, the show wraps with Round 2 of Cars Against Humanity.</p><p><a href="https://pnc.st/s/iroh/ca16b359/episode-12-let-s-play-a-game-/transcript">Read transcript</a></p><hr>

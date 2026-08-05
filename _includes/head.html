@@ -63,7 +63,9 @@
       "url": {{ '/' | absolute_url | jsonify }}
     },
     "sameAs": [
-      "https://bsky.app/profile/irohpodcast.com"
+      {% for identity_url in site.data.syndication_partners.identity_urls %}
+      {{ identity_url | jsonify }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
     ]
   }
   </script>

@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 02: The Great White Whale"
-description: "The Great White Whale Caleb talks about his old 740 Turbo wagon, then the crew sits around and determines the average Volvo for Geno and Caleb. As always, send questions, comments…"
+description: "The Great White Whale Caleb talks about his old 740 Turbo wagon, then the crew sits around and determines the average Volvo for Geno and Caleb."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-02-the-great-white-whale/
 podcast_episode: true
@@ -18,6 +18,6 @@ transcript_path: "/transcripts/episode-02-the-great-white-whale/"
 transcript_source_url: ""
 ---
 
-<h1>The Great White Whale</h1>
+<h3>The Great White Whale</h3>
 <p>Caleb talks about his old 740 Turbo wagon, then the crew sits around and determines the average Volvo for Geno and Caleb. </p>
 <p>As always, send questions, comments and hate mail to mailbag [at] <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a>. We will read your emails live on the air at some point, we promise.</p>

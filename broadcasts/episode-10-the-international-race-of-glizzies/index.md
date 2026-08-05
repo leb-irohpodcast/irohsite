@@ -18,6 +18,5 @@ transcript_path: "/transcripts/episode-10-the-international-race-of-glizzies/"
 transcript_source_url: "https://pnc.st/s/iroh/2ceb56a5/episode-10-the-international-race-of-glizzies/transcript"
 ---
 
-<h1>Episode Notes</h1>
 <p>Tactical Glizzies, Nissans, Hondas and more, brought to you by Caleb, Justin and Geno. </p>
 <p>The International Race of Hammpions is a production of Hammpions Broadcast International.</p><p><a href="https://pnc.st/s/iroh/2ceb56a5/episode-10-the-international-race-of-glizzies/transcript">Read transcript</a></p><hr>

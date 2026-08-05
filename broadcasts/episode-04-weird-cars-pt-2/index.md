@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 04: Weird Cars, Pt. 2"
-description: "Episode 04 Justin takes a sabbatical, Caleb waxes eloquently on the first-gen Insight, German cars are discussed and the crew makes a political plea regarding the upcoming…"
+description: "Episode 04 Justin takes a sabbatical, Caleb waxes eloquently on the first-gen Insight, German cars are discussed and the crew makes a political plea regarding the upcoming Tennessee gubernatorial campaign."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-04-weird-cars-pt-2/
 podcast_episode: true
@@ -18,7 +18,7 @@ transcript_path: "/transcripts/episode-04-weird-cars-pt-2/"
 transcript_source_url: ""
 ---
 
-<h1>Episode 04</h1>
+<h3>Episode 04</h3>
 <p>Justin takes a sabbatical, Caleb waxes eloquently on the first-gen Insight, German cars are discussed and the crew makes a political plea regarding the upcoming Tennessee gubernatorial campaign. (Don't vote for Marsha)</p>
 <p>As always, questions, comments and hate mail are always welcome at mailbag [at] <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a></p>
 <p>You can find the transcript for this episode (and others) at <a href="https://irohpodcast.com/" rel="nofollow">https://irohpodcast.com/</a></p>

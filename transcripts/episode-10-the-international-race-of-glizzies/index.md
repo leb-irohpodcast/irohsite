@@ -4,6 +4,7 @@ title: "Transcript: Episode 10: The International Race of Glizzies"
 description: "Tactical Glizzies, Nissans, Hondas and more, brought to you by Caleb, Justin and Geno. The International Race of Hammpions is a production of Hammpions Broadcast International."
 image: /_images/IROH_SocialLogo.png
 permalink: /transcripts/episode-10-the-international-race-of-glizzies/
+episode_path: "/broadcasts/episode-10-the-international-race-of-glizzies/"
 ---
 
 {% include iroh-masthead.html %}
@@ -19,9 +20,11 @@ permalink: /transcripts/episode-10-the-international-race-of-glizzies/
     </p>
     <audio controls preload="metadata" src="https://op3.dev/e/pinecast.com/listen/2ceb56a5-7eb2-4556-8b0f-fca85307e79f.mp3?source=rss&amp;ext=asset.mp3"></audio>
     <p class="broadcast-links">
+      <a href="{{ '/broadcasts/episode-10-the-international-race-of-glizzies/' | relative_url }}">Broadcast page and notes</a>
+      <span aria-hidden="true">|</span>
       <a href="https://pnc.st/s/iroh/2ceb56a5/episode-10-the-international-race-of-glizzies/transcript">Original Pinecast transcript</a>
       <span aria-hidden="true">|</span>
-      <a href="{{ '/' | relative_url }}">Return to IROH</a>
+      <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
     </p>
   </header>
   <div class="transcript-copy">

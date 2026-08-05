@@ -1,9 +1,10 @@
 ---
 layout: default
 title: "Transcript: Episode 08: Because Racecar"
-description: "It’s Hammpions After Dark and the crew kicks things off with a toast for Father’s Day before diving into a new (read: stolen from a higher-budget podcast) game: Cars Against…"
+description: "It’s Hammpions After Dark and the crew kicks things off with a toast for Father’s Day before diving into a new (read: stolen from a higher-budget podcast) game: Cars Against Humanity."
 image: /_images/IROH_SocialLogo.png
 permalink: /transcripts/episode-08-because-racecar/
+episode_path: "/broadcasts/episode-08-because-racecar/"
 ---
 
 {% include iroh-masthead.html %}
@@ -19,9 +20,11 @@ permalink: /transcripts/episode-08-because-racecar/
     </p>
     <audio controls preload="metadata" src="https://op3.dev/e/pinecast.com/listen/a524692b-dd8e-4216-b64f-14d517762666:56e74a5f-8832-4aba-899d-3c91ab0be5b2.mp3?source=rss&amp;ext=asset.mp3"></audio>
     <p class="broadcast-links">
+      <a href="{{ '/broadcasts/episode-08-because-racecar/' | relative_url }}">Broadcast page and notes</a>
+      <span aria-hidden="true">|</span>
       <a href="https://pnc.st/s/iroh/a524692b/episode-08-because-racecar/transcript">Original Pinecast transcript</a>
       <span aria-hidden="true">|</span>
-      <a href="{{ '/' | relative_url }}">Return to IROH</a>
+      <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
     </p>
   </header>
   <div class="transcript-copy">

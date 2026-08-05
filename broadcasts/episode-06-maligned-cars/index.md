@@ -1,7 +1,7 @@
 ---
 layout: broadcast
 title: "Episode 06: Maligned Cars"
-description: "Caleb and Geno run the show this week, with deep discussion on both maligned cars that were actually great, as well as supposedly great cars that were actually terrible. Questions…"
+description: "Caleb and Geno run the show this week, with deep discussion on both maligned cars that were actually great, as well as supposedly great cars that were actually terrible."
 image: /_images/IROH_SocialLogo.png
 permalink: /broadcasts/episode-06-maligned-cars/
 podcast_episode: true
@@ -18,6 +18,5 @@ transcript_path: ""
 transcript_source_url: ""
 ---
 
-<h1>Episode Notes</h1>
 <p>Caleb and Geno run the show this week, with deep discussion on both maligned cars that were actually great, as well as supposedly great cars that were actually terrible.</p>
 <p>Questions, comments, hate mail? We read it all at mailbag [at] <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a></p>

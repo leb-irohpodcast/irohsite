@@ -19,6 +19,29 @@
     });
   }
 
+  function localizeBulletinTimes() {
+    var bulletinTimes = document.querySelectorAll("[data-bulletin-time]");
+    var formatter = new Intl.DateTimeFormat(undefined, {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "short"
+    });
+
+    bulletinTimes.forEach(function (bulletinTime) {
+      var published = new Date(bulletinTime.getAttribute("datetime"));
+
+      if (Number.isNaN(published.getTime())) {
+        return;
+      }
+
+      bulletinTime.textContent = formatter.format(published);
+      bulletinTime.setAttribute("title", "Displayed in your local timezone");
+    });
+  }
+
   function connectListenerPoll() {
     var poll = document.querySelector("[data-listener-poll]");
     if (!poll) {
@@ -57,5 +80,6 @@
 
   updateBureauClocks();
   window.setInterval(updateBureauClocks, 30000);
+  localizeBulletinTimes();
   connectListenerPoll();
 }());

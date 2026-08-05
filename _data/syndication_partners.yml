@@ -1,0 +1,24 @@
+directories:
+  - name: Apple Podcasts
+    url: "https://podcasts.apple.com/us/podcast/the-international-race-of-hammpions/id1869778891"
+  - name: Spotify
+    url: "https://open.spotify.com/show/7hjo6nxcb2rb50lmuspunb"
+  - name: Amazon Music
+    url: "https://music.amazon.com/podcasts/57e2f473-c52d-4e11-b9d3-b117d32d3482/the-international-race-of-hammpions"
+  - name: iHeartRadio
+    url: "https://www.iheart.com/podcast/1310-the-international-race-of-317795267/"
+
+open_source:
+  - name: AntennaPod
+    url: "https://antennapod.org/deeplink/subscribe?url=https%3A%2F%2Fpinecast.com%2Ffeed%2Firoh&title=The%20International%20Race%20of%20Hammpions"
+  - name: gPodder
+    url: "https://gpodder.net/subscribe?url=https%3A%2F%2Fpinecast.com%2Ffeed%2Firoh"
+  - name: Podverse
+    url: "https://podverse.fm/search?q=The%20International%20Race%20of%20Hammpions"
+
+identity_urls:
+  - "https://bsky.app/profile/irohpodcast.com"
+  - "https://podcasts.apple.com/us/podcast/the-international-race-of-hammpions/id1869778891"
+  - "https://open.spotify.com/show/7hjo6nxcb2rb50lmuspunb"
+  - "https://music.amazon.com/podcasts/57e2f473-c52d-4e11-b9d3-b117d32d3482/the-international-race-of-hammpions"
+  - "https://www.iheart.com/podcast/1310-the-international-race-of-317795267/"
