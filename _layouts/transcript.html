@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% include iroh-masthead.html %}
+
+<article class="transcript-page legacy-transcript">
+  <header class="transcript-header">
+    <p class="broadcast-number">HBI transcript archive</p>
+    <h1>{{ page.episode_title | default: page.title | escape }}</h1>
+    <p class="transcript-subtitle">Original locally archived transcript</p>
+  </header>
+
+  <div class="transcript-copy">
+    <p class="transcript-notice">This transcript may contain errors inherited from the original transcription.</p>
+    {{ content }}
+  </div>
+</article>

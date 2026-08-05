@@ -1,3 +1,13 @@
+---
+layout: transcript
+title: "Transcript: Episode 01 — The Gallic Lion Across America"
+episode_title: "Episode 01: The Gallic Lion Across America"
+description: "Transcript of IROH Episode 01, The Gallic Lion Across America."
+image: /_images/IROH_SocialLogo.png
+permalink: /transcripts/episode-01-the-gallic-lion-across-america/
+iroh_episode: "1"
+---
+
 # The International Race of Hammpions Episode 1 - The Gallic Lion Across America
 
 **[Episode Link](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**

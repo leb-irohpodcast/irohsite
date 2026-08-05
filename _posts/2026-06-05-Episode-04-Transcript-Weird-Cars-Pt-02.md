@@ -1,3 +1,13 @@
+---
+layout: transcript
+title: "Transcript: Episode 04 — Weird Cars, Pt. 2"
+episode_title: "Episode 04: Weird Cars, Pt. 2"
+description: "Transcript of IROH Episode 04, Weird Cars, Pt. 2."
+image: /_images/IROH_SocialLogo.png
+permalink: /transcripts/episode-04-weird-cars-pt-2/
+iroh_episode: "4"
+---
+
 # The International Race of Hammpions Episode 04 - Weird Cars, Pt. 2
 
 **[Episode Link](https://pinecast.com/listen/f4e8052d-c962-4179-a1cf-8a0bab524bf2.mp3)**

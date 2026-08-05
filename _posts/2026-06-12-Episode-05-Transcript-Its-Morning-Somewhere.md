@@ -1,3 +1,13 @@
+---
+layout: transcript
+title: "Transcript: Episode 05 — It's Morning Somewhere"
+episode_title: "Episode 05: It's Morning Somewhere"
+description: "Transcript of IROH Episode 05, It's Morning Somewhere."
+image: /_images/IROH_SocialLogo.png
+permalink: /transcripts/episode-05-its-morning-somewhere/
+iroh_episode: "5"
+---
+
 # The International Race of Hammpions Episode 05 - It's Morning Somewhere
 
 **[Episode Link](https://op3.dev/e/pinecast.com/listen/ce666fa1-b391-4ee7-9045-86c2836cca59.mp3)**

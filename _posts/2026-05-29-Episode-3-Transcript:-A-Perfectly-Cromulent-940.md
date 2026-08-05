@@ -1,3 +1,13 @@
+---
+layout: transcript
+title: "Transcript: Episode 03 — A Perfectly Cromulent 940"
+episode_title: "Episode 03: A Perfectly Cromulent 940"
+description: "Transcript of IROH Episode 03, A Perfectly Cromulent 940."
+image: /_images/IROH_SocialLogo.png
+permalink: /transcripts/episode-03-a-perfectly-cromulent-940/
+iroh_episode: "3"
+---
+
 # The International Race of Hammpions Episode 03 - A Perfectly Cromulent 940
 
 **[Episode Link](https://pinecast.com/listen/41b0901f-ae5b-45bd-b5a9-b8066a2d370e.mp3)**

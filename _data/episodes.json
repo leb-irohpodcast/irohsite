@@ -128,7 +128,7 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/56c20821-6719-4fb7-8c6b-fb9e7230cd91/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "/transcripts/episode-05-its-morning-somewhere/"
     },
     {
       "title": "IROH Trailer, Take 02",
@@ -160,7 +160,7 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/80f4fe10-7eb7-42fc-a8c9-ae98638a02b8/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "/transcripts/episode-04-weird-cars-pt-2/"
     },
     {
       "title": "Episode 03: A Perfectly Cromulent 940",
@@ -176,7 +176,7 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/14e5384e-2f77-4a5e-b9c8-30b2308eadb4/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "/transcripts/episode-03-a-perfectly-cromulent-940/"
     },
     {
       "title": "Episode 02: The Great White Whale",
@@ -192,7 +192,7 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/ce78357f-b0ef-4f8a-b05c-cff686014411/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "/transcripts/episode-02-the-great-white-whale/"
     },
     {
       "title": "Episode 01: The Gallic Lion Across America",
@@ -208,7 +208,7 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/ccba22fb-d4c2-4245-88f6-333ff8c7710b/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "/transcripts/episode-01-the-gallic-lion-across-america/"
     },
     {
       "title": "Episode 00: Weird Cars, Pt. 1",
@@ -224,7 +224,7 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/bd820d4c-1ec9-45df-8e89-22d3c7aabd13/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "/transcripts/episode-00-weird-cars-pt-1/"
     }
   ]
 }

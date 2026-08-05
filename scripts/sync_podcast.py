@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 RSS_URL = "https://pinecast.com/feed/iroh"
 OUTPUT_FILE = Path("_data/episodes.json")
 TRANSCRIPT_DIRECTORY = Path("transcripts")
+POST_DIRECTORY = Path("_posts")
 REFRESH_TRANSCRIPTS = os.environ.get("REFRESH_TRANSCRIPTS") == "1"
 
 ITUNES = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
@@ -166,6 +167,45 @@ def truncate_description(value, limit=180):
 
     shortened = value[: limit + 1].rsplit(" ", 1)[0].rstrip(" ,.;:-")
     return f"{shortened}…"
+
+
+def episode_number_key(episode_number, title):
+    value = str(episode_number or "").strip()
+    if value.isdigit():
+        return str(int(value))
+
+    match = re.search(r"\bEpisode\s+0*(\d+)\b", title or "", flags=re.IGNORECASE)
+    return str(int(match.group(1))) if match else ""
+
+
+def find_archived_transcripts():
+    transcripts = {}
+
+    for post in POST_DIRECTORY.glob("*.md"):
+        text = post.read_text(encoding="utf-8", errors="replace")
+        if not text.startswith("---"):
+            continue
+
+        front_matter_end = text.find("\n---", 3)
+        if front_matter_end == -1:
+            continue
+
+        front_matter = text[3:front_matter_end]
+        episode_match = re.search(
+            r'^iroh_episode:\s*["\']?(\d+)["\']?\s*$',
+            front_matter,
+            flags=re.MULTILINE,
+        )
+        permalink_match = re.search(
+            r'^permalink:\s*["\']?([^"\'\s]+)["\']?\s*$',
+            front_matter,
+            flags=re.MULTILINE,
+        )
+
+        if episode_match and permalink_match:
+            transcripts[str(int(episode_match.group(1)))] = permalink_match.group(1)
+
+    return transcripts
 
 
 class PinecastTranscriptParser(HTMLParser):
@@ -371,6 +411,7 @@ channel_image = (
 channel_image = channel_image or get_text(channel, "image/url")
 
 episodes = []
+archived_transcripts = find_archived_transcripts()
 
 for item in channel.findall("item"):
     enclosure = item.find("enclosure")
@@ -409,7 +450,12 @@ for item in channel.findall("item"):
         "_sort_time": sort_time,
     }
 
-    if episode["transcript_source_url"]:
+    episode_key = episode_number_key(episode["episode_number"], episode["title"])
+    archived_transcript_path = archived_transcripts.get(episode_key, "")
+
+    if archived_transcript_path:
+        episode["transcript_path"] = archived_transcript_path
+    elif episode["transcript_source_url"]:
         transcript_slug = make_slug(episode["title"])
         transcript_file = TRANSCRIPT_DIRECTORY / transcript_slug / "index.md"
         transcript_permalink = f"/transcripts/{transcript_slug}/"

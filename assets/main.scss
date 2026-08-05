@@ -550,6 +550,14 @@ audio {
   font-size: 11px;
 }
 
+.legacy-transcript .transcript-copy > h1:first-of-type {
+  display: none;
+}
+
+.legacy-transcript .transcript-copy > p:first-of-type {
+  margin-top: 0;
+}
+
 .site-footer {
   padding: 9px 0 12px;
   color: #e9f0f4;

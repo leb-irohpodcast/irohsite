@@ -1,3 +1,13 @@
+---
+layout: transcript
+title: "Transcript: Episode 00 — Weird Cars, Pt. 1"
+episode_title: "Episode 00: Weird Cars, Pt. 1"
+description: "Transcript of IROH Episode 00, Weird Cars, Pt. 1: the debut transmission with Caleb and Justin."
+image: /_images/IROH_SocialLogo.png
+permalink: /transcripts/episode-00-weird-cars-pt-1/
+iroh_episode: "0"
+---
+
 # The International Race of Hammpions Episode 0 - Weird Cars, Pt 1
 
 **[Episode Link](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
