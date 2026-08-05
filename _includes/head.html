@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-  {%- feed_meta -%}
   <link
     rel="alternate"
     type="application/rss+xml"
@@ -14,4 +13,59 @@
   <link rel="apple-touch-icon" href="{{ '/_images/IROH_SocialLogo.png' | relative_url }}">
   <meta name="theme-color" content="#002d4f">
   <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
+
+  {% if page.podcast_episode %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastEpisode",
+    "url": {{ page.url | absolute_url | jsonify }},
+    "name": {{ page.episode_title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "datePublished": {{ page.published | jsonify }},
+    {% if page.duration_iso != "" %}"duration": {{ page.duration_iso | jsonify }},{% endif %}
+    {% if page.episode_number != "" %}"episodeNumber": {{ page.episode_number | jsonify }},{% endif %}
+    "inLanguage": "en-US",
+    "associatedMedia": {
+      "@type": "MediaObject",
+      "contentUrl": {{ page.audio_url | jsonify }},
+      "encodingFormat": {{ page.audio_type | default: "audio/mpeg" | jsonify }}
+    },
+    "partOfSeries": {
+      "@type": "PodcastSeries",
+      "name": "The International Race of Hammpions Show",
+      "url": {{ '/' | absolute_url | jsonify }},
+      "webFeed": "https://pinecast.com/feed/iroh"
+    },
+    "productionCompany": {
+      "@type": "Organization",
+      "name": "Hammpions Broadcast International",
+      "url": {{ '/' | absolute_url | jsonify }}
+    }
+  }
+  </script>
+  {% elsif page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "The International Race of Hammpions Show",
+    "alternateName": "IROH Podcast",
+    "url": {{ '/' | absolute_url | jsonify }},
+    "description": {{ page.description | default: site.description | jsonify }},
+    "inLanguage": "en-US",
+    "webFeed": "https://pinecast.com/feed/iroh",
+    "numberOfEpisodes": {{ site.data.episodes.episodes | size }},
+    "image": {{ '/_images/IROH_SocialLogo.png' | absolute_url | jsonify }},
+    "productionCompany": {
+      "@type": "Organization",
+      "name": "Hammpions Broadcast International",
+      "url": {{ '/' | absolute_url | jsonify }}
+    },
+    "sameAs": [
+      "https://bsky.app/profile/irohpodcast.com"
+    ]
+  }
+  </script>
+  {% endif %}
 </head>

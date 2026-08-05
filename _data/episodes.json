@@ -16,7 +16,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/7c5d8ed2-d5d5-4cf2-b614-8775b77cbcd2/NewIROHLogo.png.jpg",
       "transcript_source_url": "https://pnc.st/s/iroh/ca16b359/episode-12-let-s-play-a-game-/transcript",
-      "transcript_path": "/transcripts/episode-12-let-s-play-a-game/"
+      "transcript_path": "/transcripts/episode-12-let-s-play-a-game/",
+      "episode_path": "/broadcasts/episode-12-let-s-play-a-game/",
+      "duration_iso": "PT57M48S"
     },
     {
       "title": "Episode 11: Bad Decisions and Great Music",
@@ -32,7 +34,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/37b2a173-93d9-44ea-b99b-65df76fbfb7b/NewIROHLogo.png.jpg",
       "transcript_source_url": "https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-and-great-music/transcript",
-      "transcript_path": "/transcripts/episode-11-bad-decisions-and-great-music/"
+      "transcript_path": "/transcripts/episode-11-bad-decisions-and-great-music/",
+      "episode_path": "/broadcasts/episode-11-bad-decisions-and-great-music/",
+      "duration_iso": "PT1H6M35S"
     },
     {
       "title": "Episode 10: The International Race of Glizzies",
@@ -48,7 +52,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/698d58b6-b825-4852-a291-c3b484ee97d6/NewIROHLogo.png.jpg",
       "transcript_source_url": "https://pnc.st/s/iroh/2ceb56a5/episode-10-the-international-race-of-glizzies/transcript",
-      "transcript_path": "/transcripts/episode-10-the-international-race-of-glizzies/"
+      "transcript_path": "/transcripts/episode-10-the-international-race-of-glizzies/",
+      "episode_path": "/broadcasts/episode-10-the-international-race-of-glizzies/",
+      "duration_iso": "PT51M24S"
     },
     {
       "title": "Episode 09: Acts of Boat, Acts of God and Acts of DMV",
@@ -64,7 +70,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/covers/3260c467-1f42-4a8c-9741-127c0962baa8/NewIROHLogo.jpg",
       "transcript_source_url": "https://pnc.st/s/iroh/c1c998fd/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/transcript",
-      "transcript_path": "/transcripts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/"
+      "transcript_path": "/transcripts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/",
+      "episode_path": "/broadcasts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/",
+      "duration_iso": "PT58M19S"
     },
     {
       "title": "Episode 08: Because Racecar",
@@ -80,7 +88,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/27830613-5ff4-4741-8a56-58210f552643/IROH_Logo.png.jpg.png",
       "transcript_source_url": "https://pnc.st/s/iroh/a524692b/episode-08-because-racecar/transcript",
-      "transcript_path": "/transcripts/episode-08-because-racecar/"
+      "transcript_path": "/transcripts/episode-08-because-racecar/",
+      "episode_path": "/broadcasts/episode-08-because-racecar/",
+      "duration_iso": "PT39M39S"
     },
     {
       "title": "Episode 07: Cups, Rams, Minivans and LeMans",
@@ -96,7 +106,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/4afc7238-b3c7-4295-b35c-272fcb17c800/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "",
+      "episode_path": "/broadcasts/episode-07-cups-rams-minivans-and-lemans/",
+      "duration_iso": "PT1H16M29S"
     },
     {
       "title": "Episode 06: Maligned Cars",
@@ -112,7 +124,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/d0085b77-d6cf-407e-88b1-154c0cd95d6a/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "",
+      "episode_path": "/broadcasts/episode-06-maligned-cars/",
+      "duration_iso": "PT57M32S"
     },
     {
       "title": "Episode 05: It's Morning Somewhere",
@@ -128,7 +142,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/56c20821-6719-4fb7-8c6b-fb9e7230cd91/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": "/transcripts/episode-05-its-morning-somewhere/"
+      "transcript_path": "/transcripts/episode-05-its-morning-somewhere/",
+      "episode_path": "/broadcasts/episode-05-it-s-morning-somewhere/",
+      "duration_iso": "PT1H8M49S"
     },
     {
       "title": "IROH Trailer, Take 02",
@@ -144,7 +160,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/728fd3d5-acd7-4ae9-ba71-a4b8f4d06b17/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": ""
+      "transcript_path": "",
+      "episode_path": "/broadcasts/iroh-trailer-take-02/",
+      "duration_iso": "PT1M14S"
     },
     {
       "title": "Episode 04: Weird Cars, Pt. 2",
@@ -160,7 +178,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/80f4fe10-7eb7-42fc-a8c9-ae98638a02b8/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": "/transcripts/episode-04-weird-cars-pt-2/"
+      "transcript_path": "/transcripts/episode-04-weird-cars-pt-2/",
+      "episode_path": "/broadcasts/episode-04-weird-cars-pt-2/",
+      "duration_iso": "PT38M36S"
     },
     {
       "title": "Episode 03: A Perfectly Cromulent 940",
@@ -176,7 +196,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/14e5384e-2f77-4a5e-b9c8-30b2308eadb4/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": "/transcripts/episode-03-a-perfectly-cromulent-940/"
+      "transcript_path": "/transcripts/episode-03-a-perfectly-cromulent-940/",
+      "episode_path": "/broadcasts/episode-03-a-perfectly-cromulent-940/",
+      "duration_iso": "PT44M20S"
     },
     {
       "title": "Episode 02: The Great White Whale",
@@ -192,7 +214,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/ce78357f-b0ef-4f8a-b05c-cff686014411/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": "/transcripts/episode-02-the-great-white-whale/"
+      "transcript_path": "/transcripts/episode-02-the-great-white-whale/",
+      "episode_path": "/broadcasts/episode-02-the-great-white-whale/",
+      "duration_iso": "PT57M41S"
     },
     {
       "title": "Episode 01: The Gallic Lion Across America",
@@ -208,7 +232,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/ccba22fb-d4c2-4245-88f6-333ff8c7710b/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": "/transcripts/episode-01-the-gallic-lion-across-america/"
+      "transcript_path": "/transcripts/episode-01-the-gallic-lion-across-america/",
+      "episode_path": "/broadcasts/episode-01-the-gallic-lion-across-america/",
+      "duration_iso": "PT33M10S"
     },
     {
       "title": "Episode 00: Weird Cars, Pt. 1",
@@ -216,7 +242,7 @@
       "guid": "https://pinecast.com/guid/361039de-1840-4275-9be9-ede97dd12696",
       "published": "2026-05-09T01:44:12+00:00",
       "duration": "00:27:47",
-      "episode_number": "",
+      "episode_number": "0",
       "episode_type": "",
       "description_html": "<h1>Episode 0: Weird Cars, Part 1</h1>\n<p>Caleb and Justin go on an ADHD-fueled wander about cars, from their own, to random car shopping stories and other side quests. Sit back and enjoy as we take our first dive into the world of casting pods. </p>\n<p>Feel free to send any commentary to mailbag [at] <a href=\"http://irohpodcast.com\" rel=\"nofollow\">irohpodcast.com</a></p>",
       "description_text": "Episode 0: Weird Cars, Part 1 Caleb and Justin go on an ADHD-fueled wander about cars, from their own, to random car shopping stories and other side quests. Sit back and enjoy as we take our first dive into the world of casting pods. Feel free to send any commentary to mailbag [at] irohpodcast.com",
@@ -224,7 +250,9 @@
       "audio_type": "audio/mpeg",
       "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/artwork/bd820d4c-1ec9-45df-8e89-22d3c7aabd13/IROH_Logo.png.jpg.png",
       "transcript_source_url": "",
-      "transcript_path": "/transcripts/episode-00-weird-cars-pt-1/"
+      "transcript_path": "/transcripts/episode-00-weird-cars-pt-1/",
+      "episode_path": "/broadcasts/episode-00-weird-cars-pt-1/",
+      "duration_iso": "PT27M47S"
     }
   ]
 }

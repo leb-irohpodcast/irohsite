@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+{% include iroh-masthead.html %}
+
+<article class="broadcast-page">
+  <header class="broadcast-page__header">
+    <p class="broadcast-number">
+      {% if page.episode_number != "" %}
+        Broadcast {{ page.episode_number }}
+      {% else %}
+        Special transmission
+      {% endif %}
+    </p>
+
+    <h1>{{ page.episode_title | default: page.title | escape }}</h1>
+
+    <p class="broadcast-meta">
+      <time datetime="{{ page.published }}">
+        {{ page.published | date: "%B %-d, %Y" }}
+      </time>
+      {% if page.duration != "" %}
+        &nbsp;|&nbsp; {{ page.duration }}
+      {% endif %}
+    </p>
+
+    {% if page.description != "" %}
+    <p class="broadcast-page__summary">{{ page.description | escape }}</p>
+    {% endif %}
+
+    {% if page.audio_url != "" %}
+    <div class="listen-console">
+      <p class="listen-console__label">
+        <span>HBI streaming audio</span>
+        <strong>Listen now</strong>
+      </p>
+      <audio controls preload="metadata" src="{{ page.audio_url | escape }}">
+        <a href="{{ page.audio_url | escape }}">Listen to the broadcast</a>
+      </audio>
+    </div>
+    {% endif %}
+
+    <p class="broadcast-links">
+      {% if page.transcript_path != "" %}
+        <a href="{{ page.transcript_path | relative_url }}">Read transcript</a>
+        <span aria-hidden="true">|</span>
+      {% elsif page.transcript_source_url != "" %}
+        <a href="{{ page.transcript_source_url | escape }}">Read transcript</a>
+        <span aria-hidden="true">|</span>
+      {% endif %}
+      <a href="{{ page.audio_url | escape }}">Direct MP3</a>
+      {% if page.external_url != "" and page.external_url != page.audio_url %}
+        <span aria-hidden="true">|</span>
+        <a href="{{ page.external_url | escape }}">Original listing</a>
+      {% endif %}
+    </p>
+  </header>
+
+  <section class="broadcast-page__notes" aria-labelledby="broadcast-notes-title">
+    <h2 id="broadcast-notes-title">Broadcast notes</h2>
+    <div class="episode-notes">
+      {{ content }}
+    </div>
+  </section>
+
+  <nav class="broadcast-page__navigation" aria-label="Broadcast navigation">
+    <a href="{{ '/' | relative_url }}">&laquo; Current broadcast</a>
+    <span aria-hidden="true">|</span>
+    <a href="{{ '/archive/' | relative_url }}">Complete archive</a>
+  </nav>
+</article>

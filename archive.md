@@ -29,7 +29,11 @@ permalink: /archive/
           {% endif %}
         </p>
 
-        <h2>{{ episode.title | escape }}</h2>
+        <h2>
+          <a class="broadcast-title-link" href="{{ episode.episode_path | relative_url }}">
+            {{ episode.title | escape }}
+          </a>
+        </h2>
 
         <p class="broadcast-meta">
           <time datetime="{{ episode.published }}">
@@ -41,12 +45,14 @@ permalink: /archive/
         </p>
 
         {% if episode.audio_url != "" %}
-        <audio controls preload="metadata" src="{{ episode.audio_url | escape }}">
+        <audio controls preload="none" src="{{ episode.audio_url | escape }}">
           <a href="{{ episode.audio_url | escape }}">Listen to the episode</a>
         </audio>
         {% endif %}
 
         <p class="broadcast-links">
+          <a href="{{ episode.episode_path | relative_url }}">Broadcast page</a>
+          <span aria-hidden="true">|</span>
           {% if episode.transcript_path != "" %}
             <a href="{{ episode.transcript_path | relative_url }}">Read transcript</a>
             <span aria-hidden="true">|</span>

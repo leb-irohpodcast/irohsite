@@ -10,7 +10,7 @@ iroh_episode: "0"
 
 # The International Race of Hammpions Episode 0 - Weird Cars, Pt 1
 
-**[Episode Link](https://pinecast.com/listen/f5d921f9-2420-42b0-b6cf-643cd0e780ba.mp3)**
+**[Episode Link](https://pinecast.com/listen/361039de-1840-4275-9be9-ede97dd12696.mp3)**
 
 ---
 

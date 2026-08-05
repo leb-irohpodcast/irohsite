@@ -22,6 +22,7 @@ BULLETIN_OUTPUT_FILE = Path("_data/network_bulletin.json")
 POLL_BANK_FILE = Path("_data/polls.json")
 CURRENT_POLL_FILE = Path("_data/current_poll.json")
 TRANSCRIPT_DIRECTORY = Path("transcripts")
+BROADCAST_DIRECTORY = Path("broadcasts")
 POST_DIRECTORY = Path("_posts")
 REFRESH_TRANSCRIPTS = os.environ.get("REFRESH_TRANSCRIPTS") == "1"
 
@@ -328,6 +329,39 @@ def truncate_description(value, limit=180):
     return f"{shortened}…"
 
 
+def iso_duration(value):
+    value = str(value or "").strip()
+    if not value:
+        return ""
+
+    try:
+        if value.isdigit():
+            total_seconds = int(value)
+        else:
+            parts = [int(part) for part in value.split(":")]
+            if len(parts) == 3:
+                hours, minutes, seconds = parts
+            elif len(parts) == 2:
+                hours = 0
+                minutes, seconds = parts
+            else:
+                return ""
+            total_seconds = hours * 3600 + minutes * 60 + seconds
+    except ValueError:
+        return ""
+
+    hours, remainder = divmod(total_seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    pieces = ["PT"]
+    if hours:
+        pieces.append(f"{hours}H")
+    if minutes:
+        pieces.append(f"{minutes}M")
+    if seconds or len(pieces) == 1:
+        pieces.append(f"{seconds}S")
+    return "".join(pieces)
+
+
 def episode_number_key(episode_number, title):
     value = str(episode_number or "").strip()
     if value.isdigit():
@@ -554,6 +588,74 @@ def write_transcript_page(episode, source_url, destination, permalink):
     destination.write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_broadcast_page(episode):
+    broadcast_slug = make_slug(episode["title"])
+    destination = BROADCAST_DIRECTORY / broadcast_slug / "index.md"
+    description = truncate_description(episode.get("description_text", ""))
+    if not description:
+        description = (
+            f"Listen to {episode['title']} from The International Race of "
+            "Hammpions Show."
+        )
+
+    lines = [
+        "---",
+        "layout: broadcast",
+        f"title: {json.dumps(episode['title'], ensure_ascii=False)}",
+        f"description: {json.dumps(description, ensure_ascii=False)}",
+        "image: /_images/IROH_SocialLogo.png",
+        f"permalink: {episode['episode_path']}",
+        "podcast_episode: true",
+        f"episode_title: {json.dumps(episode['title'], ensure_ascii=False)}",
+        f"episode_number: {json.dumps(episode['episode_number'], ensure_ascii=False)}",
+        f"episode_type: {json.dumps(episode['episode_type'], ensure_ascii=False)}",
+        f"published: {json.dumps(episode['published'], ensure_ascii=False)}",
+        f"duration: {json.dumps(episode['duration'], ensure_ascii=False)}",
+        f"duration_iso: {json.dumps(episode['duration_iso'], ensure_ascii=False)}",
+        f"audio_url: {json.dumps(episode['audio_url'], ensure_ascii=False)}",
+        f"audio_type: {json.dumps(episode['audio_type'], ensure_ascii=False)}",
+        f"external_url: {json.dumps(episode['link'], ensure_ascii=False)}",
+        f"transcript_path: {json.dumps(episode['transcript_path'], ensure_ascii=False)}",
+        f"transcript_source_url: {json.dumps(episode['transcript_source_url'], ensure_ascii=False)}",
+        "---",
+        "",
+    ]
+
+    if episode.get("description_html"):
+        lines.append(episode["description_html"])
+    else:
+        lines.append(
+            f"<p>{html_escape(description)}</p>"
+        )
+
+    lines.append("")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text("\n".join(lines), encoding="utf-8")
+    print(f"Updated broadcast page: {episode['title']}")
+    return destination
+
+
+def remove_stale_broadcast_pages(active_pages):
+    if not BROADCAST_DIRECTORY.exists():
+        return
+
+    for page in BROADCAST_DIRECTORY.glob("*/index.md"):
+        if page in active_pages:
+            continue
+
+        text = page.read_text(encoding="utf-8", errors="replace")
+        front_matter = text.split("---", 2)[1] if text.startswith("---") else ""
+        if "layout: broadcast" not in front_matter:
+            continue
+        if "podcast_episode: true" not in front_matter:
+            continue
+
+        page.unlink()
+        if not any(page.parent.iterdir()):
+            page.parent.rmdir()
+        print(f"Removed stale broadcast page: {page}")
+
+
 rss_xml = fetch_text(RSS_URL)
 root = ET.fromstring(rss_xml)
 
@@ -571,6 +673,8 @@ channel_image = channel_image or get_text(channel, "image/url")
 
 episodes = []
 archived_transcripts = find_archived_transcripts()
+active_broadcast_pages = set()
+episode_paths = set()
 
 for item in channel.findall("item"):
     enclosure = item.find("enclosure")
@@ -591,8 +695,11 @@ for item in channel.findall("item"):
         or get_text(item, "description")
     )
 
+    episode_title = get_text(item, "title")
+    episode_slug = make_slug(episode_title)
+
     episode = {
-        "title": get_text(item, "title"),
+        "title": episode_title,
         "link": get_text(item, "link") or audio_url,
         "guid": get_text(item, "guid") or audio_url,
         "published": published,
@@ -606,10 +713,17 @@ for item in channel.findall("item"):
         "image_url": episode_image or channel_image,
         "transcript_source_url": find_transcript_url(description),
         "transcript_path": "",
+        "episode_path": f"/broadcasts/{episode_slug}/",
         "_sort_time": sort_time,
     }
+    episode["duration_iso"] = iso_duration(episode["duration"])
+    if episode["episode_path"] in episode_paths:
+        raise ValueError(f"Duplicate broadcast page path: {episode['episode_path']}")
+    episode_paths.add(episode["episode_path"])
 
     episode_key = episode_number_key(episode["episode_number"], episode["title"])
+    if not episode["episode_number"] and episode_key:
+        episode["episode_number"] = episode_key
     archived_transcript_path = archived_transcripts.get(episode_key, "")
 
     if archived_transcript_path:
@@ -634,7 +748,11 @@ for item in channel.findall("item"):
         if transcript_file.exists():
             episode["transcript_path"] = transcript_permalink
 
+    active_broadcast_pages.add(write_broadcast_page(episode))
+
     episodes.append(episode)
+
+remove_stale_broadcast_pages(active_broadcast_pages)
 
 episodes.sort(key=lambda episode: episode["_sort_time"], reverse=True)
 

@@ -40,7 +40,11 @@ image: /_images/IROH_Banner3.png
             {% endif %}
           </p>
 
-          <h2>{{ latest.title | escape }}</h2>
+          <h2>
+            <a class="broadcast-title-link" href="{{ latest.episode_path | relative_url }}">
+              {{ latest.title | escape }}
+            </a>
+          </h2>
 
           <p class="broadcast-meta">
             <time datetime="{{ latest.published }}">
@@ -74,6 +78,8 @@ image: /_images/IROH_Banner3.png
           {% endif %}
 
           <p class="broadcast-links">
+            <a href="{{ latest.episode_path | relative_url }}">Broadcast page</a>
+            <span aria-hidden="true">|</span>
             {% if latest.transcript_path != "" %}
               <a href="{{ latest.transcript_path | relative_url }}">Read transcript</a>
               <span aria-hidden="true">|</span>
@@ -112,7 +118,11 @@ image: /_images/IROH_Banner3.png
               {% endif %}
             </p>
 
-            <h3>{{ episode.title | escape }}</h3>
+            <h3>
+              <a class="broadcast-title-link" href="{{ episode.episode_path | relative_url }}">
+                {{ episode.title | escape }}
+              </a>
+            </h3>
 
             <p class="broadcast-meta">
               <time datetime="{{ episode.published }}">
@@ -129,13 +139,15 @@ image: /_images/IROH_Banner3.png
                 <span>HBI audio archive</span>
                 <strong>Listen now</strong>
               </p>
-              <audio controls preload="metadata" src="{{ episode.audio_url | escape }}">
+              <audio controls preload="none" src="{{ episode.audio_url | escape }}">
                 <a href="{{ episode.audio_url | escape }}">Listen to the episode</a>
               </audio>
             </div>
             {% endif %}
 
             <p class="broadcast-links">
+              <a href="{{ episode.episode_path | relative_url }}">Broadcast page</a>
+              <span aria-hidden="true">|</span>
               {% if episode.transcript_path != "" %}
                 <a href="{{ episode.transcript_path | relative_url }}">Read transcript</a>
                 <span aria-hidden="true">|</span>
