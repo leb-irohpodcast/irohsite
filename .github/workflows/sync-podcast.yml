@@ -1,0 +1,109 @@
+name: Sync podcast and deploy website
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+  schedule:
+    # Checks every 15 minutes around the normal Friday release window.
+    # GitHub schedules use UTC.
+    - cron: "7,22,37,52 3-5 * * 5"
+
+    # Daily fallback for specials and delayed releases.
+    - cron: "17 9 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      should_deploy: ${{ steps.state.outputs.should_deploy }}
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Read the IROH RSS feed
+        run: python scripts/sync_podcast.py
+
+      - name: Check whether anything changed
+        id: state
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          git status --porcelain -- _data/episodes.json > /tmp/episode-status
+
+          if [ -s /tmp/episode-status ]; then
+            echo "feed_changed=true" >> "$GITHUB_OUTPUT"
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "feed_changed=false" >> "$GITHUB_OUTPUT"
+
+            if [ "$EVENT_NAME" = "schedule" ]; then
+              echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Save updated episode data
+        if: steps.state.outputs.feed_changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/episodes.json
+          git commit -m "Update episodes from RSS feed"
+          git push
+
+      - name: Configure GitHub Pages
+        if: steps.state.outputs.should_deploy == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Build the Jekyll website
+        if: steps.state.outputs.should_deploy == 'true'
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload the finished website
+        if: steps.state.outputs.should_deploy == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+  deploy:
+    if: needs.build.outputs.should_deploy == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
