@@ -273,6 +273,45 @@ def find_transcript_url(description_html):
     return urljoin(RSS_URL, parser.transcript_url) if parser.transcript_url else ""
 
 
+def localize_transcript_links(description_html, transcript_path):
+    """Point transcript links in imported notes at the site's own copy."""
+    if not description_html or not transcript_path:
+        return description_html
+
+    anchor_pattern = re.compile(
+        r"<a\b(?P<attrs>[^>]*)>(?P<label>.*?)</a\s*>",
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    href_pattern = re.compile(
+        r"(\bhref\s*=\s*)([\"'])(.*?)(\2)",
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    local_href = html_escape(transcript_path, quote=True)
+
+    def replace_anchor(match):
+        attrs = match.group("attrs")
+        label = match.group("label")
+        href_match = href_pattern.search(attrs)
+        if not href_match:
+            return match.group(0)
+
+        href = html_unescape(href_match.group(3)).lower()
+        label_text = " ".join(
+            re.sub(r"<[^>]+>", " ", html_unescape(label)).lower().split()
+        )
+        if "transcript" not in label_text and "/transcript" not in href:
+            return match.group(0)
+
+        localized_attrs = href_pattern.sub(
+            lambda href_match: f'{href_match.group(1)}"{local_href}"',
+            attrs,
+            count=1,
+        )
+        return f"<a{localized_attrs}>{label}</a>"
+
+    return anchor_pattern.sub(replace_anchor, description_html)
+
+
 def clean_description_html(description_html):
     if not description_html:
         return ""
@@ -805,6 +844,11 @@ for item in channel.findall("item"):
 
         if transcript_file.exists():
             episode["transcript_path"] = transcript_permalink
+
+    if episode["transcript_path"]:
+        episode["description_html"] = localize_transcript_links(
+            episode["description_html"], episode["transcript_path"]
+        )
 
     active_broadcast_pages.add(write_broadcast_page(episode))
 

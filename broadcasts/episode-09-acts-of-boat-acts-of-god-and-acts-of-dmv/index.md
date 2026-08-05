@@ -20,4 +20,4 @@ transcript_source_url: "https://pnc.st/s/iroh/c1c998fd/episode-09-acts-of-boat-a
 
 <p>With 226 watts of Pure Podcast Power, Episode 09 of The International Race of Hammpions is landing on your platform of choice.</p>
 <p>This week: Acts of Boat, Acts of God and Acts of DMV, along with a Subaru shifter giveaway for our dedicated listeners AND a call to action to find the listener (or potential listener) with a particular TN-registered 2011 Prius.</p>
-<p>Want to enter the bad-decision Subaru sweepstakes, explain your vanity plate, or sponsor our podcast empire?  <a href="mailto:mailbag@irohpodcast.com" rel="nofollow">mailbag@irohpodcast.com</a> or find us on Bluesky: @irohpodcast.com.</p><p><a href="https://pnc.st/s/iroh/c1c998fd/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/transcript">Read transcript</a></p><hr>
+<p>Want to enter the bad-decision Subaru sweepstakes, explain your vanity plate, or sponsor our podcast empire?  <a href="mailto:mailbag@irohpodcast.com" rel="nofollow">mailbag@irohpodcast.com</a> or find us on Bluesky: @irohpodcast.com.</p><p><a href="/transcripts/episode-09-acts-of-boat-acts-of-god-and-acts-of-dmv/">Read transcript</a></p><hr>

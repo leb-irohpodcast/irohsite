@@ -71,4 +71,4 @@ transcript_source_url: "https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-
 <h3>General Picks</h3>
 <p>From Caleb - Public Enemy, Mogwai and Godspeed You! Black Emperor in general.</p>
 <p>From Justin - <em>Initial D</em>-style Eurobeat, Pendulum, early Three 6 Mafia</p>
-<p>From Geno - Tony Hawk's Pro Skater soundtrack and the GTA Vice City radio music</p><p><a href="https://pnc.st/s/iroh/1f6a7b60/episode-11-bad-decisions-and-great-music/transcript">Read transcript</a></p><hr>
+<p>From Geno - Tony Hawk's Pro Skater soundtrack and the GTA Vice City radio music</p><p><a href="/transcripts/episode-11-bad-decisions-and-great-music/">Read transcript</a></p><hr>

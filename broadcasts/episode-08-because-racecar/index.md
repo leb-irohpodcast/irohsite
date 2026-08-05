@@ -20,4 +20,4 @@ transcript_source_url: "https://pnc.st/s/iroh/a524692b/episode-08-because-raceca
 
 <p>It’s <em>Hammpions After Dark</em>  and the crew kicks things off with a toast for Father’s Day before diving into a new (read: stolen from a higher-budget podcast) game: <strong>Cars Against Humanity</strong>. (Credit: Collector Car Feed for the premise)</p>
 <p>Then the show turns to the big assignment: inventing the dumbest possible current-production spec racing series, as well as our first Live on the Scene dispatch.</p>
-<p>It's a good time, and if you want to drop us a line, or tell us what your experience was driving a VInFast, mailbag@irohpodcast.com or find us on Bluesky @ <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a></p><p><a href="https://pnc.st/s/iroh/a524692b/episode-08-because-racecar/transcript">Read transcript</a></p><hr>
+<p>It's a good time, and if you want to drop us a line, or tell us what your experience was driving a VInFast, mailbag@irohpodcast.com or find us on Bluesky @ <a href="http://irohpodcast.com" rel="nofollow">irohpodcast.com</a></p><p><a href="/transcripts/episode-08-because-racecar/">Read transcript</a></p><hr>

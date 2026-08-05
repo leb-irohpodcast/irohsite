@@ -187,7 +187,7 @@ image: /_images/IROH_Banner3.png
     </section>
 
     <section class="radio-box" id="syndication-partners">
-      <h2 class="radio-box__title">Syndication Partners</h2>
+      <h2 class="radio-box__title">Distribution Partners</h2>
       <div class="radio-box__content syndication-partners">
         <p class="syndication-group">Global distribution</p>
         <ul class="link-list">

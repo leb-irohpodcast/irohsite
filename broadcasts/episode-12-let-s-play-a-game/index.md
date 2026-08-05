@@ -19,4 +19,4 @@ transcript_source_url: "https://pnc.st/s/iroh/ca16b359/episode-12-let-s-play-a-g
 ---
 
 <p>Justin &quot;The Juice&quot; discusses smashing back roads in a minivan and gets high on starting fluid, Geno devours more glizzies and downs Kurt Russell's mullet, all of the guys talk barbecue and Caleb checks in from The Land that Stellantis Forgot.</p>
-<p>Finally, the show wraps with Round 2 of Cars Against Humanity.</p><p><a href="https://pnc.st/s/iroh/ca16b359/episode-12-let-s-play-a-game-/transcript">Read transcript</a></p><hr>
+<p>Finally, the show wraps with Round 2 of Cars Against Humanity.</p><p><a href="/transcripts/episode-12-let-s-play-a-game/">Read transcript</a></p><hr>
