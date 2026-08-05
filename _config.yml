@@ -1,6 +1,13 @@
 theme: minima
 title: IROH
 description: Multinational automotive drive-time radio from Rio de Janeiro, Knoxville and the Twin Cities.
+url: https://irohpodcast.com
 
+# Jekyll normally excludes folders beginning with an underscore. This makes
+# the studio artwork available at /_images/ on the finished site.
+include:
+  - _images
+
+# Prevent the homepage H1 from becoming a duplicate navigation link.
 titles_from_headings:
   enabled: false
