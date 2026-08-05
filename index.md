@@ -9,10 +9,10 @@ layout: default
 
 <section class="welcome-box">
   <p class="welcome-label">Welcome to IROHpodcast.com</p>
-  <h1>Morning radio from Rio, Knoxville and the Twin Cities—on the World Wide Web.</h1>
+  <h1>Morning drive-time radio from Rio, Knoxville and the Twin Cities — Now on the World Wide Web.</h1>
   <p>
-    Sit back with Caleb, Geno and Justin “The Juice” for automotive news,
-    questionable advice and dispatches from the worldwide Fleet of Hammpions.
+    Sit back with Caleb, Geno and Justin “The Juice” for automotive excellence,
+    tales from the beyond and the latest dispatches from the Global Fleet of Hammpions.
   </p>
 </section>
 
@@ -149,7 +149,7 @@ layout: default
       <h2 class="radio-box__title">Broadcast schedule</h2>
       <div class="radio-box__content">
         <p><strong>Thursday, 11 PM Eastern</strong><br>Friday, midnight BRT</p>
-        <p>Available on HBI and selected global distribution partners.</p>
+        <p>Available on HBI and in syndication via select global distribution partners.</p>
       </div>
     </section>
 
@@ -160,7 +160,7 @@ layout: default
           class="network-mark"
           src="{{ '/_images/NewIROHLogo.svg' | relative_url }}"
           alt="International Race of Hammpions logo">
-        <p>Three studios. Two continents. One questionable automotive authority.</p>
+        <p>Three studios. Two continents. One epic broadcast.</p>
       </div>
     </section>
 
