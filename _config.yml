@@ -1,2 +1,6 @@
 theme: minima
-title: The International Race of Hammpions Show
+title: IROH
+description: Multinational automotive drive-time radio from Rio de Janeiro, Knoxville and the Twin Cities.
+
+titles_from_headings:
+  enabled: false
