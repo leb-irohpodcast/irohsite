@@ -427,11 +427,30 @@ audio {
   text-align: center;
 }
 
-.network-mark {
+.network-mark-crop {
+  position: relative;
   display: block;
-  width: 135px;
+  width: 160px;
   max-width: 100%;
-  margin: 0 auto 6px;
+  height: 82px;
+  margin: 0 auto 4px;
+  overflow: hidden;
+}
+
+.network-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 160px;
+  max-width: none;
+  height: 160px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+.station-identification p {
+  margin: 4px 0 2px;
 }
 
 .bureau-list figure {

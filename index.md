@@ -1,5 +1,7 @@
 ---
 layout: default
+description: "Multinational morning drive-time radio from Rio, Knoxville and the Twin Cities: automotive excellence, tales from beyond and the Global Fleet of Hammpions."
+image: /_images/IROH_Banner3.png
 ---
 
 {% assign episodes = site.data.episodes.episodes %}
@@ -47,8 +49,12 @@ layout: default
           </p>
 
           {% if latest.description_html != "" %}
+          {% assign latest_summary = latest.description_text %}
+          {% if latest_summary == nil or latest_summary == "" %}
+            {% assign latest_summary = latest.description_html | replace: "</h1>", " " | replace: "</h2>", " " | replace: "</h3>", " " | replace: "</p>", " " | replace: "<br>", " " | replace: "<br />", " " | strip_html | remove_first: "Episode Notes" | replace: "Read transcript...", "" | replace: "Read transcript…", "" | strip %}
+          {% endif %}
           <p class="broadcast-summary">
-            {{ latest.description_html | strip_html | truncatewords: 55 }}
+            {{ latest_summary | truncatewords: 55 }}
           </p>
           {% endif %}
 
@@ -156,10 +162,12 @@ layout: default
     <section class="radio-box">
       <h2 class="radio-box__title">Hammpions Broadcast International</h2>
       <div class="radio-box__content station-identification">
-        <img
-          class="network-mark"
-          src="{{ '/_images/NewIROHLogo.svg' | relative_url }}"
-          alt="International Race of Hammpions logo">
+        <span class="network-mark-crop">
+          <img
+            class="network-mark"
+            src="{{ '/_images/NewIROHLogo.svg' | relative_url }}"
+            alt="International Race of Hammpions logo">
+        </span>
         <p>Three studios. Two continents. One epic broadcast.</p>
       </div>
     </section>

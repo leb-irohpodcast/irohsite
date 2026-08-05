@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Broadcast Archive
+description: Every International Race of Hammpions broadcast, newest first, with episode notes, audio and transcripts where available.
+image: /_images/IROH_Banner3.png
 permalink: /archive/
 ---
 

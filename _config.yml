@@ -1,7 +1,22 @@
 theme: minima
-title: IROH
-description: Multinational automotive drive-time radio from Rio de Janeiro, Knoxville and the Twin Cities.
+title: The International Race of Hammpions Show
+description: "Multinational morning drive-time radio from Rio, Knoxville and the Twin Cities: automotive excellence, tales from beyond and the Global Fleet of Hammpions."
 url: https://irohpodcast.com
+lang: en-US
+logo: /_images/IROH_SocialLogo.png
+
+author:
+  name: Hammpions Broadcast International
+
+social:
+  name: The International Race of Hammpions Show
+  links:
+    - https://bsky.app/profile/irohpodcast.com
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Jekyll normally excludes folders beginning with an underscore. This makes
 # the studio artwork available at /_images/ on the finished site.

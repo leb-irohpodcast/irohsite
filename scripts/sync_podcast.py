@@ -110,6 +110,63 @@ def find_transcript_url(description_html):
     return urljoin(RSS_URL, parser.transcript_url) if parser.transcript_url else ""
 
 
+class EpisodeDescriptionParser(HTMLParser):
+    BLOCK_TAGS = {
+        "article",
+        "blockquote",
+        "br",
+        "div",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "hr",
+        "li",
+        "p",
+        "section",
+    }
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() in self.BLOCK_TAGS:
+            self.parts.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag.lower() in self.BLOCK_TAGS:
+            self.parts.append(" ")
+
+    def handle_data(self, data):
+        self.parts.append(data)
+
+
+def make_description_text(description_html):
+    if not description_html:
+        return ""
+
+    parser = EpisodeDescriptionParser()
+    parser.feed(description_html)
+    text = " ".join("".join(parser.parts).split())
+    text = re.sub(r"^(?:Episode|Broadcast)\s+Notes\s*", "", text, flags=re.IGNORECASE)
+    text = re.sub(
+        r"\s*Read transcript(?:\.{3}|…)?\s*$",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    return text.strip()
+
+
+def truncate_description(value, limit=180):
+    if len(value) <= limit:
+        return value
+
+    shortened = value[: limit + 1].rsplit(" ", 1)[0].rstrip(" ,.;:-")
+    return f"{shortened}…"
+
+
 class PinecastTranscriptParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -182,10 +239,13 @@ def write_transcript_page(episode, source_url, destination, permalink):
         raise ValueError("No transcript turns were found on the Pinecast page.")
 
     page_title = f"Transcript: {episode['title']}"
+    page_description = truncate_description(episode.get("description_text", ""))
     lines = [
         "---",
         "layout: default",
         f"title: {json.dumps(page_title, ensure_ascii=False)}",
+        f"description: {json.dumps(page_description, ensure_ascii=False)}",
+        "image: /_images/IROH_SocialLogo.png",
         f"permalink: {permalink}",
         "---",
         "",
@@ -284,6 +344,7 @@ for item in channel.findall("item"):
         "episode_number": get_text(item, f"{ITUNES}episode"),
         "episode_type": get_text(item, f"{ITUNES}episodeType"),
         "description_html": description,
+        "description_text": make_description_text(description),
         "audio_url": audio_url,
         "audio_type": audio_type,
         "image_url": episode_image or channel_image,
