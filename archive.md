@@ -18,12 +18,6 @@ permalink: /archive/
   <div class="broadcast-list">
     {% for episode in episodes %}
     <article class="broadcast-row archive-row">
-      <img
-        class="broadcast-row__art"
-        src="{{ episode.image_url | escape }}"
-        alt="Artwork for {{ episode.title | escape }}"
-        loading="lazy">
-
       <div class="broadcast-row__body">
         <p class="broadcast-number">
           {% if episode.episode_number != "" %}

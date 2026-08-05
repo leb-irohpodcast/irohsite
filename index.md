@@ -26,11 +26,6 @@ layout: default
       </h2>
 
       <article class="featured-broadcast">
-        <img
-          class="featured-broadcast__art"
-          src="{{ latest.image_url | escape }}"
-          alt="Artwork for {{ latest.title | escape }}">
-
         <div class="featured-broadcast__body">
           <p class="broadcast-number">
             {% if latest.episode_number != "" %}
@@ -93,12 +88,6 @@ layout: default
       <div class="broadcast-list">
         {% for episode in episodes offset:1 limit:6 %}
         <article class="broadcast-row">
-          <img
-            class="broadcast-row__art"
-            src="{{ episode.image_url | escape }}"
-            alt="Artwork for {{ episode.title | escape }}"
-            loading="lazy">
-
           <div class="broadcast-row__body">
             <p class="broadcast-number">
               {% if episode.episode_number != "" %}
@@ -200,7 +189,7 @@ layout: default
         <ul class="link-list">
           <li><a href="mailto:mailbag@irohpodcast.com">E-mail the mailbag</a></li>
           <li><a href="https://bsky.app/profile/irohpodcast.com">IROH on Bluesky</a></li>
-          <li><a href="https://pinecast.com/feed/iroh">Podcast RSS feed</a></li>
+          <li><a href="https://pinecast.com/feed/iroh">Broadcast RSS Feed</a></li>
         </ul>
       </div>
     </section>

@@ -6,7 +6,10 @@ Copy these files into the corresponding locations in `leb-irohpodcast/irohsite`:
 - `index.md` replaces the existing homepage.
 - `archive.md` is new.
 - `_includes/iroh-masthead.html` is new.
+- `_includes/header.html` replaces Minima's text-only site header with the HBI utility strip.
+- `_includes/footer.html` replaces Minima's stock footer.
 - `assets/main.scss` is new and automatically replaces Minima's stock stylesheet.
+- `_images/IROH_SocialLogo.png` supplies the compact header mark.
 - `scripts/sync_podcast.py` replaces the existing RSS synchronization script.
 - `.github/workflows/sync-podcast.yml` replaces the existing workflow.
 
