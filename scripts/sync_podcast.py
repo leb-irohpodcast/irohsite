@@ -7,6 +7,7 @@ import unicodedata
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import escape as html_escape
+from html import unescape as html_unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -230,12 +231,67 @@ class PinecastTranscriptParser(HTMLParser):
         self.capture_text = []
 
 
+class PinecastPreloadedQueryParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.inside_preloaded_queries = False
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        if tag.lower() == "script" and attributes.get("id") == "preloaded-queries":
+            self.inside_preloaded_queries = True
+
+    def handle_data(self, data):
+        if self.inside_preloaded_queries:
+            self.parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag.lower() == "script" and self.inside_preloaded_queries:
+            self.inside_preloaded_queries = False
+
+    def transcript(self):
+        if not self.parts:
+            return "", []
+
+        payload = json.loads("".join(self.parts))
+        episode = payload.get("share", {}).get("episode", {})
+        transcript = episode.get("transcript") or {}
+
+        speaker_map = {}
+        for appearance in transcript.get("speakerAppearances") or []:
+            label = appearance.get("transcriptSpeakerLabel", "")
+            name = (appearance.get("speaker") or {}).get("name", "")
+            if label and name:
+                speaker_map[label] = html_unescape(name)
+
+        turns = []
+        for utterance in transcript.get("utteranceData") or []:
+            text = html_unescape(utterance.get("text", "")).strip()
+            if not text:
+                continue
+
+            label = utterance.get("speaker", "")
+            speaker = speaker_map.get(label, f"Speaker {label}" if label else "Speaker")
+            turns.append((speaker, text))
+
+        return html_unescape(episode.get("subtitle") or ""), turns
+
+
 def write_transcript_page(episode, source_url, destination, permalink):
     transcript_html = fetch_text(source_url)
-    parser = PinecastTranscriptParser()
-    parser.feed(transcript_html)
 
-    if not parser.turns:
+    preloaded_parser = PinecastPreloadedQueryParser()
+    preloaded_parser.feed(transcript_html)
+    subtitle, turns = preloaded_parser.transcript()
+
+    if not turns:
+        legacy_parser = PinecastTranscriptParser()
+        legacy_parser.feed(transcript_html)
+        subtitle = legacy_parser.subtitle
+        turns = legacy_parser.turns
+
+    if not turns:
         raise ValueError("No transcript turns were found on the Pinecast page.")
 
     page_title = f"Transcript: {episode['title']}"
@@ -257,9 +313,9 @@ def write_transcript_page(episode, source_url, destination, permalink):
         f"    <h1>{html_escape(episode['title'])}</h1>",
     ]
 
-    if parser.subtitle:
+    if subtitle:
         lines.append(
-            f'    <p class="transcript-subtitle">{html_escape(parser.subtitle)}</p>'
+            f'    <p class="transcript-subtitle">{html_escape(subtitle)}</p>'
         )
 
     lines.extend(
@@ -284,7 +340,7 @@ def write_transcript_page(episode, source_url, destination, permalink):
         ]
     )
 
-    for speaker, paragraph in parser.turns:
+    for speaker, paragraph in turns:
         lines.extend(
             [
                 '    <div class="transcript-turn">',

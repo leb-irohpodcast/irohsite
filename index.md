@@ -203,7 +203,3 @@ image: /_images/IROH_Banner3.png
     </section>
   </aside>
 </div>
-
-<p class="legal-id">
-  The International Race of Hammpions is a production of Hammpions Broadcast International.
-</p>
