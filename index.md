@@ -1,6 +1,6 @@
 ---
 layout: default
-description: "Multinational morning drive-time radio from Rio, Knoxville and the Twin Cities: automotive excellence, tales from beyond and the Global Fleet of Hammpions."
+description: "Multinational morning drive-time radio from Rio, Knoxville and the Twin Cities: automotive excellence, strange tales from beyond and the Global Fleet of Hammpions."
 image: /_images/IROH_Banner3.png
 ---
 
