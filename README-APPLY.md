@@ -33,14 +33,13 @@ Automatic updates use Meta's official Instagram API:
 2. In a Meta app, add **Instagram API with Instagram Login** and authorize the IROH account with the `instagram_business_basic` permission.
 3. Add the resulting long-lived token as the repository Actions secret `INSTAGRAM_ACCESS_TOKEN`.
 4. If the Meta app requires an explicit Graph API version, add it as the repository variable `INSTAGRAM_API_VERSION`; otherwise leave the variable unset.
-5. Add an OpenAI project API key as the repository Actions secret `OPENAI_API_KEY` to generate concise HBI-style titles for new posts. If this secret is omitted or the request fails, the sync falls back to the first useful line of the Instagram caption.
-6. Optionally set the repository variable `OPENAI_TITLE_MODEL` to choose a different text model. The default is `gpt-5.6-luna`.
-7. Run **Refresh Instagram Picture Wire** once from the Actions tab.
+5. Run **Refresh Instagram Picture Wire** once from the Actions tab.
 
 The workflow checks every six hours, commits new gallery data and cached
 previews, and deploys only when something changed. If
 `INSTAGRAM_ACCESS_TOKEN` is not set, the seeded gallery stays online and the
 workflow exits without changing it. Meta controls access-token lifetimes, so
 renew the secret before its token expires. Existing editorial gallery titles
-are preserved; OpenAI is called only for new posts or posts still using the
-automatic caption fallback.
+are preserved. New posts and posts still using the automatic caption fallback
+receive concise HBI-style titles from local deterministic rules, with no paid
+text-generation service or additional secret required.

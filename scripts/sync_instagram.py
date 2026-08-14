@@ -6,9 +6,9 @@ The official Instagram API needs an access token, supplied only through the
 INSTAGRAM_ACCESS_TOKEN environment variable. The token is sent as a bearer
 header and is never written to the repository or generated data.
 
-New post titles can be generated through the OpenAI Responses API when an
-OPENAI_API_KEY is available. Existing editorial titles are always preserved,
-and API failures fall back to a title derived from the Instagram caption.
+New post titles are generated locally with deterministic HBI-style rules.
+Existing editorial titles are always preserved, and the workflow does not
+need a paid text-generation service.
 """
 
 import json
@@ -16,7 +16,6 @@ import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
@@ -28,25 +27,49 @@ API_BASE = os.environ.get("INSTAGRAM_API_BASE", "https://graph.instagram.com").r
 API_VERSION = os.environ.get("INSTAGRAM_API_VERSION", "").strip().strip("/")
 ACCESS_TOKEN = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
 GALLERY_LIMIT = max(1, min(int(os.environ.get("INSTAGRAM_GALLERY_LIMIT", "6")), 12))
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
-OPENAI_MODEL = os.environ.get("OPENAI_TITLE_MODEL", "").strip() or "gpt-5.6-luna"
-OPENAI_RESPONSES_URL = os.environ.get(
-    "OPENAI_RESPONSES_URL", "https://api.openai.com/v1/responses"
-).strip()
 
-TITLE_INSTRUCTIONS = """You are the headline editor for Hammpions Broadcast
-International, a fictional early-2000s radio network attached to an automotive
-podcast. Write one concise display title for an Instagram gallery card.
+VEHICLE_NAMES = {
+    "stagea": "Stagea",
+    "fiat": "Fiat",
+    "porsche": "Porsche",
+    "camry": "Camry",
+    "corolla": "Corolla",
+    "civic": "Civic",
+    "accord": "Accord",
+    "subaru": "Subaru",
+    "volvo": "Volvo",
+    "bmw": "BMW",
+    "mercedes": "Mercedes",
+    "toyota": "Toyota",
+    "nissan": "Nissan",
+    "honda": "Honda",
+}
 
-Match the understated style of these approved titles:
-- This week at the Brazilian Studio
-- The Fleet adds a Fiat
-- The Reservoir Report
-- Timing-belt stand-down
+REPAIR_TERMS = (
+    "repair",
+    "service",
+    "workshop",
+    "garage",
+    "timing belt",
+    "suspension",
+    "struggle",
+    "issue",
+    "broken",
+    "parked",
+    "stand-down",
+)
 
-Return only the title. Use 2 to 8 words and no more than 64 characters. Do not
-use quotation marks, hashtags, attribution, or ending punctuation. Do not
-invent details that are absent from the caption."""
+FLEET_ADDITION_TERMS = (
+    "added",
+    "adds",
+    "joined",
+    "joins",
+    "new car",
+    "new vehicle",
+    "picked up",
+    "bought",
+    "adopted",
+)
 
 MEDIA_FIELDS = ",".join(
     [
@@ -150,63 +173,96 @@ def title_from_caption(caption, label):
     return f"{label.title()} from the HBI Picture Wire"
 
 
-def response_output_text(payload):
-    if not isinstance(payload, dict):
-        return ""
-    for output in payload.get("output") or []:
-        if not isinstance(output, dict):
+def caption_for_headline(caption):
+    lines = []
+    for raw_line in str(caption or "").splitlines():
+        line = re.sub(r"https?://\S+|#\w+|@\w+", " ", raw_line)
+        line = re.sub(r"\s+", " ", line).strip()
+        if not line or re.fullmatch(r"[-–—]\s*[\w .'-]{1,40}", line):
             continue
-        if output.get("type") != "message":
-            continue
-        for content in output.get("content") or []:
-            if not isinstance(content, dict):
-                continue
-            if content.get("type") == "output_text" and content.get("text"):
-                return str(content["text"])
+        lines.append(line)
+    return re.sub(r"\s+", " ", " ".join(lines)).strip()
+
+
+def mentioned_vehicle(lower_caption):
+    for keyword, display_name in VEHICLE_NAMES.items():
+        if re.search(rf"\b{re.escape(keyword)}\b", lower_caption):
+            return display_name
     return ""
 
 
-def clean_generated_title(value):
-    title = str(value or "").strip()
-    title = re.sub(r"^title\s*:\s*", "", title, flags=re.IGNORECASE)
-    title = re.sub(r"\s+", " ", title).strip(" \"'“”‘’")
-    title = title.rstrip(".!?")
-    words = title.split()
-    if not 2 <= len(words) <= 8 or len(title) > 64:
-        return ""
-    return title
-
-
-def generate_title(caption, label):
-    if not OPENAI_API_KEY or not caption:
-        return ""
-
-    request_payload = {
-        "model": OPENAI_MODEL,
-        "instructions": TITLE_INSTRUCTIONS,
-        "input": f"Media type: {label}\nInstagram caption:\n{caption[:2000]}",
-        "reasoning": {"effort": "low"},
-        "max_output_tokens": 128,
-        "store": False,
+def compact_caption_title(text, label):
+    first_sentence = re.split(r"[.!?](?:\s|$)", text, maxsplit=1)[0]
+    first_sentence = re.sub(
+        r"^(?:some|a few|here(?:'s| is)|throwback to|quick|another)\s+",
+        "",
+        first_sentence,
+        flags=re.IGNORECASE,
+    ).strip(" -,:;")
+    words = first_sentence.split()[:8]
+    trailing_words = {
+        "a",
+        "an",
+        "and",
+        "at",
+        "for",
+        "of",
+        "the",
+        "to",
     }
-    request = Request(
-        OPENAI_RESPONSES_URL,
-        data=json.dumps(request_payload).encode("utf-8"),
-        method="POST",
-        headers={
-            "Authorization": f"Bearer {OPENAI_API_KEY}",
-            "Content-Type": "application/json",
-            "User-Agent": "IROH-Website-Instagram-Sync/1.0",
-        },
+    while words and words[-1].lower() in trailing_words:
+        words.pop()
+    title = " ".join(words).rstrip(" -,:;.!?")
+    while len(title) > 64 and len(title.split()) > 2:
+        words.pop()
+        while words and words[-1].lower() in trailing_words:
+            words.pop()
+        title = " ".join(words).rstrip(" -,:;.!?")
+    if 2 <= len(title.split()) <= 8 and len(title) <= 64:
+        return title[0].upper() + title[1:]
+    return f"{label.title()} from the HBI Picture Wire"
+
+
+def rule_generated_title(caption, label):
+    text = caption_for_headline(caption)
+    lower_caption = text.lower()
+    vehicle = mentioned_vehicle(lower_caption)
+    has_repairs = any(term in lower_caption for term in REPAIR_TERMS)
+    is_fleet_addition = "fleet" in lower_caption and any(
+        term in lower_caption for term in FLEET_ADDITION_TERMS
     )
 
-    try:
-        with urlopen(request, timeout=30) as response:
-            payload = json.loads(response.read().decode("utf-8"))
-        return clean_generated_title(response_output_text(payload))
-    except (HTTPError, URLError, OSError, ValueError, TypeError) as error:
-        print(f"OpenAI title generation failed; using caption fallback: {error}")
-        return ""
+    if "reservoir report" in lower_caption:
+        return "The Reservoir Report"
+
+    if vehicle == "Stagea" and has_repairs:
+        if "juice holler" in lower_caption:
+            return "Stagea stand-down at Juice Holler"
+        if "timing belt" in lower_caption:
+            return "Stagea timing-belt stand-down"
+        return "The Stagea workshop report"
+
+    if "timing belt" in lower_caption:
+        return "Timing-belt stand-down"
+
+    if vehicle and is_fleet_addition:
+        return f"The Fleet adds a {vehicle}"
+
+    if "brazilian studio" in lower_caption:
+        if "this week" in lower_caption or "happenings" in lower_caption:
+            return "This week at the Brazilian Studio"
+        return "Dispatch from the Brazilian Studio"
+
+    if vehicle and has_repairs:
+        return f"The {vehicle} workshop report"
+
+    if vehicle:
+        return f"The {vehicle} Report"
+
+    if "juice holler" in lower_caption:
+        return "Dispatch from Juice Holler"
+
+    return compact_caption_title(text, label)
 
 
 def post_title(caption, label, existing):
@@ -219,18 +275,15 @@ def post_title(caption, label, existing):
         and existing_title == title_from_caption(existing_caption, label)
     )
 
-    if existing_title and existing_source in {"editorial", "openai"}:
+    if existing_title and existing_source in {"editorial", "openai", "rules"}:
         return existing_title, existing_source
 
     if existing_title and not existing_is_fallback:
         return existing_title, "editorial"
 
-    generated = generate_title(caption, label)
-    if generated:
-        print(f"Generated Instagram title with {OPENAI_MODEL}: {generated}")
-        return generated, "openai"
-
-    return existing_title or title_from_caption(caption, label), "caption"
+    generated = rule_generated_title(caption, label)
+    print(f"Generated rule-based Instagram title: {generated}")
+    return generated, "rules"
 
 
 def extension_for(content_type):
