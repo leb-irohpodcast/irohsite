@@ -5,6 +5,10 @@
 The official Instagram API needs an access token, supplied only through the
 INSTAGRAM_ACCESS_TOKEN environment variable. The token is sent as a bearer
 header and is never written to the repository or generated data.
+
+New post titles can be generated through the OpenAI Responses API when an
+OPENAI_API_KEY is available. Existing editorial titles are always preserved,
+and API failures fall back to a title derived from the Instagram caption.
 """
 
 import json
@@ -12,6 +16,7 @@ import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
@@ -23,6 +28,25 @@ API_BASE = os.environ.get("INSTAGRAM_API_BASE", "https://graph.instagram.com").r
 API_VERSION = os.environ.get("INSTAGRAM_API_VERSION", "").strip().strip("/")
 ACCESS_TOKEN = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
 GALLERY_LIMIT = max(1, min(int(os.environ.get("INSTAGRAM_GALLERY_LIMIT", "6")), 12))
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
+OPENAI_MODEL = os.environ.get("OPENAI_TITLE_MODEL", "").strip() or "gpt-5.6-luna"
+OPENAI_RESPONSES_URL = os.environ.get(
+    "OPENAI_RESPONSES_URL", "https://api.openai.com/v1/responses"
+).strip()
+
+TITLE_INSTRUCTIONS = """You are the headline editor for Hammpions Broadcast
+International, a fictional early-2000s radio network attached to an automotive
+podcast. Write one concise display title for an Instagram gallery card.
+
+Match the understated style of these approved titles:
+- This week at the Brazilian Studio
+- The Fleet adds a Fiat
+- The Reservoir Report
+- Timing-belt stand-down
+
+Return only the title. Use 2 to 8 words and no more than 64 characters. Do not
+use quotation marks, hashtags, attribution, or ending punctuation. Do not
+invent details that are absent from the caption."""
 
 MEDIA_FIELDS = ",".join(
     [
@@ -126,6 +150,89 @@ def title_from_caption(caption, label):
     return f"{label.title()} from the HBI Picture Wire"
 
 
+def response_output_text(payload):
+    if not isinstance(payload, dict):
+        return ""
+    for output in payload.get("output") or []:
+        if not isinstance(output, dict):
+            continue
+        if output.get("type") != "message":
+            continue
+        for content in output.get("content") or []:
+            if not isinstance(content, dict):
+                continue
+            if content.get("type") == "output_text" and content.get("text"):
+                return str(content["text"])
+    return ""
+
+
+def clean_generated_title(value):
+    title = str(value or "").strip()
+    title = re.sub(r"^title\s*:\s*", "", title, flags=re.IGNORECASE)
+    title = re.sub(r"\s+", " ", title).strip(" \"'“”‘’")
+    title = title.rstrip(".!?")
+    words = title.split()
+    if not 2 <= len(words) <= 8 or len(title) > 64:
+        return ""
+    return title
+
+
+def generate_title(caption, label):
+    if not OPENAI_API_KEY or not caption:
+        return ""
+
+    request_payload = {
+        "model": OPENAI_MODEL,
+        "instructions": TITLE_INSTRUCTIONS,
+        "input": f"Media type: {label}\nInstagram caption:\n{caption[:2000]}",
+        "reasoning": {"effort": "low"},
+        "max_output_tokens": 128,
+        "store": False,
+    }
+    request = Request(
+        OPENAI_RESPONSES_URL,
+        data=json.dumps(request_payload).encode("utf-8"),
+        method="POST",
+        headers={
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json",
+            "User-Agent": "IROH-Website-Instagram-Sync/1.0",
+        },
+    )
+
+    try:
+        with urlopen(request, timeout=30) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        return clean_generated_title(response_output_text(payload))
+    except (HTTPError, URLError, OSError, ValueError, TypeError) as error:
+        print(f"OpenAI title generation failed; using caption fallback: {error}")
+        return ""
+
+
+def post_title(caption, label, existing):
+    existing_title = str(existing.get("title") or "").strip()
+    existing_caption = str(existing.get("caption") or "").strip()
+    existing_source = str(existing.get("title_source") or "").strip()
+    existing_is_fallback = (
+        existing_source == "caption"
+        or existing_title
+        and existing_title == title_from_caption(existing_caption, label)
+    )
+
+    if existing_title and existing_source in {"editorial", "openai"}:
+        return existing_title, existing_source
+
+    if existing_title and not existing_is_fallback:
+        return existing_title, "editorial"
+
+    generated = generate_title(caption, label)
+    if generated:
+        print(f"Generated Instagram title with {OPENAI_MODEL}: {generated}")
+        return generated, "openai"
+
+    return existing_title or title_from_caption(caption, label), "caption"
+
+
 def extension_for(content_type):
     return {
         "image/jpeg": ".jpg",
@@ -188,13 +295,16 @@ def update_instagram_gallery():
         if not image:
             continue
 
+        title, title_source = post_title(caption, label, existing)
+
         posts.append(
             {
                 "id": key,
                 "published": published,
                 "kind_label": label,
                 "bureau": existing.get("bureau", ""),
-                "title": existing.get("title") or title_from_caption(caption, label),
+                "title": title,
+                "title_source": title_source,
                 "caption": caption,
                 "author": existing.get("author", ""),
                 "url": permalink,

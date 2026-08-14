@@ -188,7 +188,7 @@ image: /_images/IROH_Banner3.png
       </p>
 
       <div class="picture-wire__grid">
-        {% for post in instagram.posts %}
+        {% for post in instagram.posts limit: 6 %}
         <figure class="picture-card">
           <a class="picture-card__image" href="{{ post.url | escape }}">
             <img
