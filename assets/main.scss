@@ -467,6 +467,140 @@ audio {
   font-weight: bold;
 }
 
+/* A compact station picture page, inspired by mid-2000s radio-site galleries. */
+.picture-wire__intro {
+  margin: 0;
+  padding: 7px 9px;
+  background: #fffde6;
+  border-bottom: 1px solid #a5a07a;
+  font-size: 11px;
+}
+
+.picture-wire__intro strong {
+  display: inline-block;
+  margin-right: 3px;
+  padding: 1px 4px;
+  color: #ffffff;
+  background: var(--hbi-red);
+  border: 1px outset #ff8b8b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.picture-wire__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  padding: 7px;
+  background: #c8d0d6;
+  border-top: 1px solid #ffffff;
+}
+
+.picture-card {
+  min-width: 0;
+  margin: 0;
+  padding: 4px;
+  background: #ffffff;
+  border: 1px solid #596873;
+  box-shadow: inset 1px 1px #ffffff;
+}
+
+.picture-card__image {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #222b31;
+  border: 2px inset #e5eaed;
+}
+
+.picture-card__image:hover,
+.picture-card__image:focus {
+  background: #222b31;
+}
+
+.picture-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 120ms linear;
+}
+
+.picture-card__image:hover img,
+.picture-card__image:focus img {
+  filter: contrast(1.06) saturate(1.08);
+}
+
+.picture-card__kind {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  padding: 2px 5px;
+  color: #fff36a;
+  background: #171d21;
+  border: 1px solid #ffffff;
+  box-shadow: 1px 1px 0 var(--hbi-red);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+.picture-card figcaption {
+  padding: 5px 3px 2px;
+}
+
+.picture-card__dateline,
+.picture-card__byline {
+  margin: 0;
+  color: var(--hbi-red);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.picture-card h3 {
+  margin: 3px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.picture-card h3 a,
+.picture-card h3 a:visited {
+  color: var(--hbi-navy);
+}
+
+.picture-card__caption {
+  margin: 4px 0;
+  font-size: 11px;
+}
+
+.picture-card__byline {
+  padding-top: 4px;
+  color: #5c6972;
+  border-top: 1px dotted #9ba8b1;
+}
+
+.picture-wire__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+}
+
+.picture-wire__footer span {
+  color: #5c6972;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
 .station-identification {
   text-align: center;
 }
@@ -938,6 +1072,19 @@ audio {
 
   .bureau-list {
     display: block;
+  }
+
+  .picture-wire__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .picture-wire__footer {
+    display: block;
+  }
+
+  .picture-wire__footer a {
+    display: block;
+    margin-top: 3px;
   }
 
   .bureau-report,

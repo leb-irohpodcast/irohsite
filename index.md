@@ -9,6 +9,7 @@ image: /_images/IROH_Banner3.png
 {% assign bulletin = site.data.network_bulletin %}
 {% assign bulletin_posts = bulletin.posts %}
 {% assign active_poll = site.data.current_poll %}
+{% assign instagram = site.data.instagram_posts %}
 
 {% include iroh-masthead.html %}
 
@@ -175,6 +176,51 @@ image: /_images/IROH_Banner3.png
         <a href="{{ '/archive/' | relative_url }}">View the complete broadcast archive &raquo;</a>
       </p>
     </section>
+
+    {% if instagram.posts and instagram.posts.size > 0 %}
+    <section class="radio-box picture-wire" id="picture-wire" aria-labelledby="picture-wire-title">
+      <h2 class="radio-box__title" id="picture-wire-title">Behind the Scenes at HBI</h2>
+
+      <p class="picture-wire__intro">
+        <strong>New pictures!</strong>
+        Dispatches from the Global Fleet and all three HBI bureaus.
+        Click a picture for the complete transmission.
+      </p>
+
+      <div class="picture-wire__grid">
+        {% for post in instagram.posts %}
+        <figure class="picture-card">
+          <a class="picture-card__image" href="{{ post.url | escape }}">
+            <img
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.alt | default: '' | escape }}"
+              loading="lazy"
+              decoding="async">
+            <span class="picture-card__kind">{{ post.kind_label | default: 'PHOTO' | escape }}</span>
+          </a>
+          <figcaption>
+            <p class="picture-card__dateline">
+              <time datetime="{{ post.published | escape }}">{{ post.published | date: "%b %-d, %Y" }}</time>
+              {% if post.bureau and post.bureau != "" %}&bull; {{ post.bureau | escape }}{% endif %}
+            </p>
+            <h3><a href="{{ post.url | escape }}">{{ post.title | escape }}</a></h3>
+            {% if post.caption and post.caption != "" %}
+            <p class="picture-card__caption">{{ post.caption | escape | truncatewords: 28 }}</p>
+            {% endif %}
+            {% if post.author and post.author != "" %}
+            <p class="picture-card__byline">Filed by {{ post.author | escape }}</p>
+            {% endif %}
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+
+      <p class="box-footer-link picture-wire__footer">
+        <span>Picture wire last checked {{ instagram.updated_at | date: "%b %-d, %Y" }}</span>
+        <a href="{{ instagram.source_url | escape }}">More pictures at {{ instagram.handle | escape }} &raquo;</a>
+      </p>
+    </section>
+    {% endif %}
   </main>
 
   <aside class="side-column" aria-label="Show information">
@@ -339,6 +385,7 @@ image: /_images/IROH_Banner3.png
         <ul class="link-list">
           <li><a href="mailto:mailbag@irohpodcast.com">E-mail the mailbag</a></li>
           <li><a href="https://bsky.app/profile/irohpodcast.com">IROH on Bluesky</a></li>
+          <li><a href="https://www.instagram.com/iroh_show/">IROH on Instagram</a></li>
           <li><a href="https://pinecast.com/feed/iroh">Broadcast RSS Feed</a></li>
         </ul>
       </div>

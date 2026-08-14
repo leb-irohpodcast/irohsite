@@ -1,0 +1,99 @@
+name: Refresh Instagram Picture Wire
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Instagram changes less frequently than the Network Bulletin. Four checks
+    # a day keep the gallery current without unnecessary API traffic.
+    # GitHub schedules use UTC.
+    - cron: "23 */6 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      should_deploy: ${{ steps.state.outputs.should_deploy }}
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Refresh the Instagram Picture Wire
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_API_VERSION: ${{ vars.INSTAGRAM_API_VERSION }}
+        run: python scripts/sync_instagram.py
+
+      - name: Check whether the gallery changed
+        id: state
+        run: |
+          git status --porcelain -- _data/instagram_posts.json _images/instagram > /tmp/instagram-status
+
+          if [ -s /tmp/instagram-status ]; then
+            echo "gallery_changed=true" >> "$GITHUB_OUTPUT"
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "gallery_changed=false" >> "$GITHUB_OUTPUT"
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Save the updated Picture Wire
+        if: steps.state.outputs.gallery_changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/instagram_posts.json _images/instagram
+          git commit -m "Update Instagram Picture Wire [skip ci]"
+          git push
+
+      - name: Configure GitHub Pages
+        if: steps.state.outputs.should_deploy == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Build the Jekyll website
+        if: steps.state.outputs.should_deploy == 'true'
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload the finished website
+        if: steps.state.outputs.should_deploy == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+  deploy:
+    if: needs.build.outputs.should_deploy == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
