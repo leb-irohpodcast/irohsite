@@ -411,7 +411,6 @@ image: /_images/IROH_Banner3.png
           <li><a href="https://bsky.app/profile/irohpodcast.com">IROH on Bluesky</a></li>
           <li><a href="https://www.instagram.com/iroh_show/">IROH on Instagram</a></li>
           <li><a href="https://pinecast.com/feed/iroh">Broadcast RSS Feed</a></li>
-          <li><a href="https://www.youtube.com/@irohshow">Broadcasts on YouTube</a></li>
         </ul>
       </div>
     </section>
