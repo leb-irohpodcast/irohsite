@@ -183,7 +183,7 @@ audio:focus-visible {
   height: 100%;
   max-height: none;
   object-fit: cover;
-  object-position: 50% 6%;
+  object-position: 50% 11%;
 }
 
 .station-bar {
@@ -230,27 +230,6 @@ audio:focus-visible {
   box-shadow: none;
 }
 
-.welcome-box {
-  padding: 9px 11px 10px;
-  background: #fffde6;
-  border: 1px solid #a5a07a;
-  border-left: 5px solid var(--hbi-red);
-}
-
-.welcome-box h1 {
-  margin: 2px 0 5px;
-  color: var(--hbi-navy);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 21px;
-  line-height: 1.1;
-}
-
-.welcome-box p {
-  max-width: 760px;
-  margin: 4px 0;
-}
-
-.welcome-label,
 .broadcast-number {
   color: var(--hbi-red);
   font-family: Arial, Helvetica, sans-serif;
@@ -643,6 +622,27 @@ audio {
   color: var(--hbi-navy);
   font-size: 10px;
   text-transform: uppercase;
+}
+
+.about-iroh {
+  background: #fffde6;
+  border-left: 4px solid var(--hbi-red);
+}
+
+.about-iroh p {
+  margin: 0 0 7px;
+}
+
+.about-iroh p:last-child {
+  margin-bottom: 0;
+}
+
+.about-iroh__tagline {
+  color: var(--hbi-navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.25;
 }
 
 .next-transmission {
@@ -1141,10 +1141,6 @@ audio {
   .radio-nav a:visited {
     flex: 1 0 auto;
     text-align: center;
-  }
-
-  .welcome-box h1 {
-    font-size: 20px;
   }
 
   .featured-broadcast h2 {

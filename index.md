@@ -93,15 +93,6 @@ image: /_images/IROH_Banner3.png
 </section>
 {% endif %}
 
-<section class="welcome-box">
-  <p class="welcome-label">Welcome to IROHpodcast.com</p>
-  <h1>Morning drive-time radio from Rio, Knoxville and the Twin Cities — Now on the World Wide Web.</h1>
-  <p>
-    Sit back with Caleb, Geno and Justin “The Juice” for automotive excellence,
-    tales from the beyond and the latest dispatches from the Global Fleet of Hammpions.
-  </p>
-</section>
-
 <div class="page-columns">
   <main class="main-column">
     <section class="radio-box" aria-labelledby="recent-title">
@@ -224,6 +215,19 @@ image: /_images/IROH_Banner3.png
   </main>
 
   <aside class="side-column" aria-label="Show information">
+    <section class="radio-box" id="about-iroh" aria-labelledby="about-iroh-title">
+      <h2 class="radio-box__title" id="about-iroh-title">About IROH</h2>
+      <div class="radio-box__content about-iroh">
+        <p class="about-iroh__tagline">
+          Morning drive-time radio from Rio, Knoxville and the Twin Cities — now on the World Wide Web.
+        </p>
+        <p>
+          Sit back with Caleb, Geno and Justin “The Juice” for automotive excellence,
+          tales from the beyond and dispatches from the Global Fleet of Hammpions.
+        </p>
+      </div>
+    </section>
+
     <section class="radio-box" id="broadcast-schedule">
       <h2 class="radio-box__title">Broadcast schedule</h2>
       <div class="radio-box__content">
