@@ -13,6 +13,86 @@ image: /_images/IROH_Banner3.png
 
 {% include iroh-masthead.html %}
 
+{% if latest %}
+<section class="radio-box now-playing-box" id="now-playing" aria-labelledby="now-playing-title">
+  <h2 class="radio-box__title" id="now-playing-title">
+    <span class="live-light" aria-hidden="true"></span>
+    Now on the air
+  </h2>
+
+  <article class="featured-broadcast">
+    <div class="featured-broadcast__body">
+      <p class="broadcast-number">
+        {% if latest.episode_number != "" %}
+          Broadcast {{ latest.episode_number }}
+        {% else %}
+          Special transmission
+        {% endif %}
+      </p>
+
+      <h2>
+        <a class="broadcast-title-link" href="{{ latest.episode_path | relative_url }}">
+          {{ latest.title | escape }}
+        </a>
+      </h2>
+
+      <p class="broadcast-meta">
+        <time datetime="{{ latest.published }}">
+          {{ latest.published | date: "%B %-d, %Y" }}
+        </time>
+        {% if latest.duration != "" %}
+          &nbsp;|&nbsp; {{ latest.duration }}
+        {% endif %}
+      </p>
+
+      {% if latest.description_html != "" %}
+      {% assign latest_summary = latest.description_text %}
+      {% if latest_summary == nil or latest_summary == "" %}
+        {% assign latest_summary = latest.description_html | replace: "</h1>", " " | replace: "</h2>", " " | replace: "</h3>", " " | replace: "</p>", " " | replace: "<br>", " " | replace: "<br />", " " | strip_html | remove_first: "Episode Notes" | replace: "Read transcript...", "" | replace: "Read transcript…", "" | strip %}
+      {% endif %}
+      <p class="broadcast-summary">
+        {{ latest_summary | truncatewords: 55 }}
+      </p>
+      {% endif %}
+
+      {% if latest.audio_url != "" %}
+      <div class="listen-console">
+        <p class="listen-console__label">
+          <span>HBI streaming audio</span>
+          <strong>Listen now</strong>
+        </p>
+        <audio controls preload="metadata" src="{{ latest.audio_url | escape }}">
+          <a href="{{ latest.audio_url | escape }}">Listen to the episode</a>
+        </audio>
+      </div>
+      {% endif %}
+
+      <p class="broadcast-links">
+        <a href="{{ latest.episode_path | relative_url }}">Broadcast page</a>
+        <span aria-hidden="true">|</span>
+        {% if latest.transcript_path != "" %}
+          <a href="{{ latest.transcript_path | relative_url }}">Read transcript</a>
+          <span aria-hidden="true">|</span>
+        {% elsif latest.transcript_source_url != "" %}
+          <a href="{{ latest.transcript_source_url | escape }}">Read transcript</a>
+          <span aria-hidden="true">|</span>
+        {% endif %}
+        <a href="{{ latest.audio_url | escape }}">Direct MP3</a>
+      </p>
+
+      {% if latest.description_html != "" %}
+      <details class="broadcast-notes">
+        <summary>Broadcast notes</summary>
+        <div class="episode-notes">
+          {{ latest.description_html }}
+        </div>
+      </details>
+      {% endif %}
+    </div>
+  </article>
+</section>
+{% endif %}
+
 <section class="welcome-box">
   <p class="welcome-label">Welcome to IROHpodcast.com</p>
   <h1>Morning drive-time radio from Rio, Knoxville and the Twin Cities — Now on the World Wide Web.</h1>
@@ -24,86 +104,6 @@ image: /_images/IROH_Banner3.png
 
 <div class="page-columns">
   <main class="main-column">
-    {% if latest %}
-    <section class="radio-box" id="now-playing" aria-labelledby="now-playing-title">
-      <h2 class="radio-box__title" id="now-playing-title">
-        <span class="live-light" aria-hidden="true"></span>
-        Now on the air
-      </h2>
-
-      <article class="featured-broadcast">
-        <div class="featured-broadcast__body">
-          <p class="broadcast-number">
-            {% if latest.episode_number != "" %}
-              Broadcast {{ latest.episode_number }}
-            {% else %}
-              Special transmission
-            {% endif %}
-          </p>
-
-          <h2>
-            <a class="broadcast-title-link" href="{{ latest.episode_path | relative_url }}">
-              {{ latest.title | escape }}
-            </a>
-          </h2>
-
-          <p class="broadcast-meta">
-            <time datetime="{{ latest.published }}">
-              {{ latest.published | date: "%B %-d, %Y" }}
-            </time>
-            {% if latest.duration != "" %}
-              &nbsp;|&nbsp; {{ latest.duration }}
-            {% endif %}
-          </p>
-
-          {% if latest.description_html != "" %}
-          {% assign latest_summary = latest.description_text %}
-          {% if latest_summary == nil or latest_summary == "" %}
-            {% assign latest_summary = latest.description_html | replace: "</h1>", " " | replace: "</h2>", " " | replace: "</h3>", " " | replace: "</p>", " " | replace: "<br>", " " | replace: "<br />", " " | strip_html | remove_first: "Episode Notes" | replace: "Read transcript...", "" | replace: "Read transcript…", "" | strip %}
-          {% endif %}
-          <p class="broadcast-summary">
-            {{ latest_summary | truncatewords: 55 }}
-          </p>
-          {% endif %}
-
-          {% if latest.audio_url != "" %}
-          <div class="listen-console">
-            <p class="listen-console__label">
-              <span>HBI streaming audio</span>
-              <strong>Listen now</strong>
-            </p>
-            <audio controls preload="metadata" src="{{ latest.audio_url | escape }}">
-              <a href="{{ latest.audio_url | escape }}">Listen to the episode</a>
-            </audio>
-          </div>
-          {% endif %}
-
-          <p class="broadcast-links">
-            <a href="{{ latest.episode_path | relative_url }}">Broadcast page</a>
-            <span aria-hidden="true">|</span>
-            {% if latest.transcript_path != "" %}
-              <a href="{{ latest.transcript_path | relative_url }}">Read transcript</a>
-              <span aria-hidden="true">|</span>
-            {% elsif latest.transcript_source_url != "" %}
-              <a href="{{ latest.transcript_source_url | escape }}">Read transcript</a>
-              <span aria-hidden="true">|</span>
-            {% endif %}
-            <a href="{{ latest.audio_url | escape }}">Direct MP3</a>
-          </p>
-
-          {% if latest.description_html != "" %}
-          <details class="broadcast-notes">
-            <summary>Broadcast notes</summary>
-            <div class="episode-notes">
-              {{ latest.description_html }}
-            </div>
-          </details>
-          {% endif %}
-        </div>
-      </article>
-    </section>
-    {% endif %}
-
     <section class="radio-box" aria-labelledby="recent-title">
       <h2 class="radio-box__title" id="recent-title">Recent broadcasts</h2>
 
@@ -224,10 +224,30 @@ image: /_images/IROH_Banner3.png
   </main>
 
   <aside class="side-column" aria-label="Show information">
-    <section class="radio-box">
+    <section class="radio-box" id="broadcast-schedule">
       <h2 class="radio-box__title">Broadcast schedule</h2>
       <div class="radio-box__content">
-        <p><strong>Thursday, 11 PM Eastern</strong><br>Friday, midnight BRT</p>
+        <div class="next-transmission" data-next-transmission>
+          <p class="next-transmission__label">Next network transmission</p>
+          <p class="next-transmission__countdown" data-next-transmission-countdown role="timer">
+            Calculating network time&hellip;
+          </p>
+          <dl class="next-transmission__times">
+            <div>
+              <dt>Rio de Janeiro</dt>
+              <dd><time data-next-transmission-time="America/Sao_Paulo">Friday, midnight BRT</time></dd>
+            </div>
+            <div>
+              <dt>Knoxville</dt>
+              <dd><time data-next-transmission-time="America/New_York">Thursday, 11 PM Eastern</time></dd>
+            </div>
+            <div>
+              <dt>Twin Cities</dt>
+              <dd><time data-next-transmission-time="America/Chicago">Thursday, 10 PM Central</time></dd>
+            </div>
+          </dl>
+          <p class="next-transmission__feed">Network feed: Friday 03:00 UTC</p>
+        </div>
         <p>Available on HBI and in syndication via select global distribution partners.</p>
       </div>
     </section>
