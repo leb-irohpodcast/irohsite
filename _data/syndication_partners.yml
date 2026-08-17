@@ -7,7 +7,8 @@ directories:
     url: "https://music.amazon.com/podcasts/57e2f473-c52d-4e11-b9d3-b117d32d3482/the-international-race-of-hammpions"
   - name: iHeartRadio
     url: "https://www.iheart.com/podcast/1310-the-international-race-of-317795267/"
-
+  - name: YouTube
+    url: "https://www.youtube.com/@irohshow"
 open_source:
   - name: AntennaPod
     url: "https://antennapod.org/deeplink/subscribe?url=https%3A%2F%2Fpinecast.com%2Ffeed%2Firoh&title=The%20International%20Race%20of%20Hammpions"
