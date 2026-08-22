@@ -8,12 +8,12 @@
 	    "ends": "2026-09-03",
 	    "question": "What is your favorite French automaker and why?",
 	    "options": [
-	  	  "Renault"
-	  	  "Citroen"
-	  	  "Peugeot"
-	  	  "Matra"
-	  	  "Simca"
-	  	  "Alpine"
+	  	  "Renault",
+	  	  "Citroen",
+	  	  "Peugeot",
+	  	  "Matra",
+	  	  "Simca",
+	  	  "Alpine",
 	  	  "Other"
       ]
     }
