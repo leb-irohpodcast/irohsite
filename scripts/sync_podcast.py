@@ -159,6 +159,7 @@ def disabled_poll():
         "enabled": False,
         "id": "",
         "starts": "",
+        "ends": "",
         "question": "",
         "options": [],
     }
@@ -185,6 +186,7 @@ def update_current_poll():
     for poll in scheduled_polls:
         poll_id = str(poll.get("id") or "").strip()
         starts = str(poll.get("starts") or "").strip()
+        ends = str(poll.get("ends") or "").strip()
         question = str(poll.get("question") or "").strip()
         options = [
             str(option).strip()
@@ -192,10 +194,10 @@ def update_current_poll():
             if str(option).strip()
         ]
 
-        if not poll_id or not starts or not question or len(options) < 2:
+        if not poll_id or not starts or not ends or not question or len(options) < 2:
             raise ValueError(
-                "Each scheduled poll needs an id, starts date, question, "
-                "and at least two options."
+                "Each scheduled poll needs an id, starts date, ends date, "
+                "question, and at least two options."
             )
         if poll_id in poll_ids:
             raise ValueError(f"Duplicate poll id: {poll_id}")
@@ -208,11 +210,25 @@ def update_current_poll():
                 f"Poll {poll_id} has an invalid starts date; use YYYY-MM-DD."
             ) from error
 
-        if starts_date <= datetime.now(timezone.utc).date():
+        try:
+            ends_date = date.fromisoformat(ends)
+        except ValueError as error:
+            raise ValueError(
+                f"Poll {poll_id} has an invalid ends date; use YYYY-MM-DD."
+            ) from error
+
+        if ends_date <= starts_date:
+            raise ValueError(
+                f"Poll {poll_id} must end after its starts date."
+            )
+
+        today = datetime.now(timezone.utc).date()
+        if starts_date <= today < ends_date:
             eligible_polls.append(
                 {
                     "id": poll_id,
                     "starts": starts,
+                    "ends": ends,
                     "question": question,
                     "options": options,
                     "_starts_date": starts_date,
