@@ -7,7 +7,7 @@ on:
     # Instagram changes less frequently than the Network Bulletin. Four checks
     # a day keep the gallery current without unnecessary API traffic.
     # GitHub schedules use UTC.
-    - cron: "23 */6 * * *"
+    - cron: "03 */1 * * *"
 
 permissions:
   contents: write
