@@ -5,8 +5,8 @@
     {
 	    "id": "weekly-poll-2026-08-21",
 	    "starts": "2026-08-21",
-	    "ends": "2026-09-03"
-	    "question" "What is your favorite French automaker and why?",
+	    "ends": "2026-09-03",
+	    "question": "What is your favorite French automaker and why?",
 	    "options": [
 	  	  "Renault"
 	  	  "Citroen"
