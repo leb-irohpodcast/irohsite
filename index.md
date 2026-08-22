@@ -215,6 +215,35 @@ image: /_images/IROH_Banner3.png
   </main>
 
   <aside class="side-column" aria-label="Show information">
+    {% comment %}
+      The Listener Poll is intentionally absent while polls.json has
+      "enabled": false. The scheduled poll structure and the former manual
+      question remain ready for use without publishing an unfinished poll.
+    {% endcomment %}
+    {% if active_poll.enabled %}
+    <section class="radio-box" id="listener-poll">
+      <h2 class="radio-box__title">Listener Poll</h2>
+      <form
+        class="listener-poll"
+        data-listener-poll
+        data-poll-id="{{ active_poll.id | escape }}"
+        data-poll-question="{{ active_poll.question | escape }}">
+        <fieldset>
+          <legend>{{ active_poll.question | escape }}</legend>
+          {% for option in active_poll.options %}
+          <label>
+            <input type="radio" name="poll-option" value="{{ option | escape }}">
+            {{ option | escape }}
+          </label>
+          {% endfor %}
+        </fieldset>
+        <button type="submit">Transmit ballot</button>
+        <p class="poll-explainer">Ballots are delivered through the HBI mailbag. Results are entirely unscientific.</p>
+        <p class="poll-status" data-poll-status role="status" hidden></p>
+      </form>
+    </section>
+    {% endif %}
+
     <section class="radio-box" id="about-iroh" aria-labelledby="about-iroh-title">
       <h2 class="radio-box__title" id="about-iroh-title">About IROH</h2>
       <div class="radio-box__content about-iroh">
@@ -338,35 +367,6 @@ image: /_images/IROH_Banner3.png
         </p>
       </div>
     </section>
-
-    {% comment %}
-      The Listener Poll is intentionally absent while polls.json has
-      "enabled": false. The scheduled poll structure and the former manual
-      question remain ready for use without publishing an unfinished poll.
-    {% endcomment %}
-    {% if active_poll.enabled %}
-    <section class="radio-box" id="listener-poll">
-      <h2 class="radio-box__title">Listener Poll</h2>
-      <form
-        class="listener-poll"
-        data-listener-poll
-        data-poll-id="{{ active_poll.id | escape }}"
-        data-poll-question="{{ active_poll.question | escape }}">
-        <fieldset>
-          <legend>{{ active_poll.question | escape }}</legend>
-          {% for option in active_poll.options %}
-          <label>
-            <input type="radio" name="poll-option" value="{{ option | escape }}">
-            {{ option | escape }}
-          </label>
-          {% endfor %}
-        </fieldset>
-        <button type="submit">Transmit ballot</button>
-        <p class="poll-explainer">Ballots are delivered through the HBI mailbag. Results are entirely unscientific.</p>
-        <p class="poll-status" data-poll-status role="status" hidden></p>
-      </form>
-    </section>
-    {% endif %}
 
     <section class="radio-box">
       <h2 class="radio-box__title">Hammpions Broadcast International</h2>
