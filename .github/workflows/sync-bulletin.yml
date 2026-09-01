@@ -73,7 +73,7 @@ jobs:
 
       - name: Upload the finished website
         if: steps.state.outputs.should_deploy == 'true'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./_site
 
