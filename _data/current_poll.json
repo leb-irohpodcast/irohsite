@@ -1,16 +1,8 @@
 {
-  "enabled": true,
-  "id": "weekly-poll-2026-08-21",
-  "starts": "2026-08-21",
-  "ends": "2026-09-03",
-  "question": "What is your favorite French automaker and why?",
-  "options": [
-    "Renault",
-    "Citroen",
-    "Peugeot",
-    "Matra",
-    "Simca",
-    "Alpine",
-    "Other"
-  ]
+  "enabled": false,
+  "id": "",
+  "starts": "",
+  "ends": "",
+  "question": "",
+  "options": []
 }
