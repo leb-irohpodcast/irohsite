@@ -3,6 +3,24 @@
   "feed_link": "https://irohpodcast.com",
   "episodes": [
     {
+      "title": "EP 17: From Dolly to Dajiban",
+      "link": "https://op3.dev/e/pinecast.com/listen/7e906391-af04-409c-a4fe-56de41284205.mp3?source=rss&ext=asset.mp3",
+      "guid": "https://pinecast.com/guid/7e906391-af04-409c-a4fe-56de41284205",
+      "published": "2026-09-04T03:00:00+00:00",
+      "duration": "00:57:44",
+      "episode_number": "17",
+      "episode_type": "",
+      "description_html": "<h3>Episode 17</h3>\n<p>This week's broadcast is brought to you by HBI affiliate station and Northern Mississippi's home for yesterday's top country hits 91.1 WYZN - The Whizz, serving Kossuth, Rienzi and Tishomingo.</p>\n<p>This week's elite sponsors are:</p>\n<p>Crazy Ivan's Automotive Center - Northern Mississippi's exclusive home for Soviet Motoring</p>\n<p>Delta Force Appalachian Snail Extract - For a smoother brain and healthier bowel movements.</p>\n<p>Killzall Tactical Bug Removal - We go Starship Troopers on YOUR bug problems.</p>\n<p>This week's discussions:</p>\n<p>A tribute to The Greatest Tennessean of All Time: Dolly Parton</p>\n<p>Southern Gothic nights with the windows down (and lots of bug spray)</p>\n<p>Accessible Mobility Solutions</p>\n<p>Perfectly cromulent daily drivers</p>\n<p>From Roadmasters to Road Glides (and more)</p>\n<p>Panamerican Highway Dreams</p>\n<p>Alaska to Shenzen</p>\n<p>The birth of the next great automotive TV, proving we're all nines...</p>\n<p>The Great SWagon Rescue (planning)</p>\n<p>Brazilian HQ check-in</p>\n<p>Y'all take care and we'll see y'all next week.</p><p><a href=\"/transcripts/ep-17-from-dolly-to-dajiban/\">Read transcript</a></p><hr>",
+      "description_text": "Episode 17 This week's broadcast is brought to you by HBI affiliate station and Northern Mississippi's home for yesterday's top country hits 91.1 WYZN - The Whizz, serving Kossuth, Rienzi and Tishomingo. This week's elite sponsors are: Crazy Ivan's Automotive Center - Northern Mississippi's exclusive home for Soviet Motoring Delta Force Appalachian Snail Extract - For a smoother brain and healthier bowel movements. Killzall Tactical Bug Removal - We go Starship Troopers on YOUR bug problems. This week's discussions: A tribute to The Greatest Tennessean of All Time: Dolly Parton Southern Gothic nights with the windows down (and lots of bug spray) Accessible Mobility Solutions Perfectly cromulent daily drivers From Roadmasters to Road Glides (and more) Panamerican Highway Dreams Alaska to Shenzen The birth of the next great automotive TV, proving we're all nines... The Great SWagon Rescue (planning) Brazilian HQ check-in Y'all take care and we'll see y'all next week.",
+      "audio_url": "https://op3.dev/e/pinecast.com/listen/7e906391-af04-409c-a4fe-56de41284205.mp3?source=rss&ext=asset.mp3",
+      "audio_type": "audio/mpeg",
+      "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/5ae533e7-acae-44a8-9f97-751d95f122a5/NewIROHLogo-TN.png.jpg",
+      "transcript_source_url": "https://pnc.st/s/iroh/7e906391/ep-17-from-dolly-to-dajiban/transcript",
+      "transcript_path": "/transcripts/ep-17-from-dolly-to-dajiban/",
+      "episode_path": "/broadcasts/ep-17-from-dolly-to-dajiban/",
+      "duration_iso": "PT57M44S"
+    },
+    {
       "title": "Episode 16: Maintaining the French Hotdish",
       "link": "https://op3.dev/e/pinecast.com/listen/6caa44eb-43ac-444d-8b1f-116fbe4fc2ca.mp3?source=rss&ext=asset.mp3",
       "guid": "https://pinecast.com/guid/6caa44eb-43ac-444d-8b1f-116fbe4fc2ca",
