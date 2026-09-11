@@ -3,6 +3,24 @@
   "feed_link": "https://irohpodcast.com",
   "episodes": [
     {
+      "title": "EP 18: A Different DMV",
+      "link": "https://op3.dev/e/pinecast.com/listen/4349c26a-2c83-46ee-b053-fa781b3d6bb5.mp3?source=rss&ext=asset.mp3",
+      "guid": "https://pinecast.com/guid/4349c26a-2c83-46ee-b053-fa781b3d6bb5",
+      "published": "2026-09-11T03:00:00+00:00",
+      "duration": "01:04:53",
+      "episode_number": "18",
+      "episode_type": "",
+      "description_html": "<h3>Notes from the Editor:</h3>\n<p>This week's episode is brought to you by HBI affiliate 99.7 - The HAMM, serving the cities of Lutts, Cypress Inn and Walnut Grove. </p>\n<p>We'd also like to give a shout-out to their advertisers:</p>\n<p>Crazy Ivan's Automotive Center - The Tri-State Area's home for Soviet Motoring Excellence</p>\n<p>Antonio's Italian Car Specialists - Our service will have you saying &quot;Fix it again, Tony&quot;</p>\n<p>Delta Force Appalachian Snail Extract - Protect your mind, smooth your brain, enhance your movements.</p>\n<p>In this episode:</p>\n<ul>\n<li>Geno’s winter wheel procedure is continuing as planned.</li>\n<li>Please avoid saying “green and gold” near an unrestrained Brett Favre.</li>\n<li>Justin has secured Tennessee plates.</li>\n<li>Some more talking about upcoming projects happens.</li>\n<li>and much more...</li>\n</ul>\n<p>Don't forget to check your washer fluid and cash in those Menards rebates, and we'll see y'all next week. </p>\n<p>Comments, flames and roasted marshmallows are welcome at mailbag@irohpodcast.com</p><p><a href=\"/transcripts/ep-18-a-different-dmv/\">Read transcript</a></p><hr>",
+      "description_text": "Notes from the Editor: This week's episode is brought to you by HBI affiliate 99.7 - The HAMM, serving the cities of Lutts, Cypress Inn and Walnut Grove. We'd also like to give a shout-out to their advertisers: Crazy Ivan's Automotive Center - The Tri-State Area's home for Soviet Motoring Excellence Antonio's Italian Car Specialists - Our service will have you saying \"Fix it again, Tony\" Delta Force Appalachian Snail Extract - Protect your mind, smooth your brain, enhance your movements. In this episode: Geno’s winter wheel procedure is continuing as planned. Please avoid saying “green and gold” near an unrestrained Brett Favre. Justin has secured Tennessee plates. Some more talking about upcoming projects happens. and much more... Don't forget to check your washer fluid and cash in those Menards rebates, and we'll see y'all next week. Comments, flames and roasted marshmallows are welcome at mailbag@irohpodcast.com",
+      "audio_url": "https://op3.dev/e/pinecast.com/listen/4349c26a-2c83-46ee-b053-fa781b3d6bb5.mp3?source=rss&ext=asset.mp3",
+      "audio_type": "audio/mpeg",
+      "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/c77083a5-000d-4cbc-b222-44b4e1a93815/NewIROHLogo-MN.png.jpg",
+      "transcript_source_url": "https://pnc.st/s/iroh/4349c26a/ep-18-a-different-dmv/transcript",
+      "transcript_path": "/transcripts/ep-18-a-different-dmv/",
+      "episode_path": "/broadcasts/ep-18-a-different-dmv/",
+      "duration_iso": "PT1H4M53S"
+    },
+    {
       "title": "EP 17: From Dolly to Dajiban",
       "link": "https://op3.dev/e/pinecast.com/listen/7e906391-af04-409c-a4fe-56de41284205.mp3?source=rss&ext=asset.mp3",
       "guid": "https://pinecast.com/guid/7e906391-af04-409c-a4fe-56de41284205",
