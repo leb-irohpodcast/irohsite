@@ -3,6 +3,24 @@
   "feed_link": "https://irohpodcast.com",
   "episodes": [
     {
+      "title": "Episode 20: Put Up Your (Iron) Dukes",
+      "link": "https://op3.dev/e/pinecast.com/listen/3ff112c0-1190-49c2-a1d0-f75f2d5fcc32.mp3?source=rss&ext=asset.mp3",
+      "guid": "https://pinecast.com/guid/3ff112c0-1190-49c2-a1d0-f75f2d5fcc32",
+      "published": "2026-09-25T03:00:00+00:00",
+      "duration": "01:03:50",
+      "episode_number": "20",
+      "episode_type": "",
+      "description_html": "<p>The International Race of Hammpions is a product of Hammpions Broadcast International, a division of HBI World Media. </p>\n<p>This week's sponsor is Crazy Ivan's Soviet Surplus, your home for surplus icebreakers and more.</p>\n<ul>\n<li>Junkyard luxury</li>\n<li>Rally dreams</li>\n<li>A continued fondness for the French</li>\n<li>Winter tires</li>\n<li>Spec LLV</li>\n<li>Pixie for city council</li>\n<li>Spec Vega</li>\n<li>Cadillac horns</li>\n</ul><p><a href=\"/transcripts/episode-20-put-up-your-iron-dukes/\">Read transcript</a></p><hr>",
+      "description_text": "The International Race of Hammpions is a product of Hammpions Broadcast International, a division of HBI World Media. This week's sponsor is Crazy Ivan's Soviet Surplus, your home for surplus icebreakers and more. Junkyard luxury Rally dreams A continued fondness for the French Winter tires Spec LLV Pixie for city council Spec Vega Cadillac horns",
+      "audio_url": "https://op3.dev/e/pinecast.com/listen/3ff112c0-1190-49c2-a1d0-f75f2d5fcc32.mp3?source=rss&ext=asset.mp3",
+      "audio_type": "audio/mpeg",
+      "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/3aecddef-36e7-4a28-ac60-f05deee7e223/NewIROHLogo.png.jpg",
+      "transcript_source_url": "https://pnc.st/s/iroh/3ff112c0/episode-20-put-up-your-iron-dukes/transcript",
+      "transcript_path": "/transcripts/episode-20-put-up-your-iron-dukes/",
+      "episode_path": "/broadcasts/episode-20-put-up-your-iron-dukes/",
+      "duration_iso": "PT1H3M50S"
+    },
+    {
       "title": "Episode 19: The Language of Horsepower",
       "link": "https://op3.dev/e/pinecast.com/listen/2a9b785a-57a6-4384-b8fe-fa5765d021c3.mp3?source=rss&ext=asset.mp3",
       "guid": "https://pinecast.com/guid/2a9b785a-57a6-4384-b8fe-fa5765d021c3",
