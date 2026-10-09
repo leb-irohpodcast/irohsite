@@ -3,6 +3,24 @@
   "feed_link": "https://irohpodcast.com",
   "episodes": [
     {
+      "title": "Episode 22: The International Race of Malörtians",
+      "link": "https://op3.dev/e/pinecast.com/listen/bc3f356c-0a1f-4dec-9606-96fce779cdb3:8b66b8a3-8c9f-41a6-bd4f-46c605ffef20.mp3?source=rss&ext=asset.mp3",
+      "guid": "https://pinecast.com/guid/bc3f356c-0a1f-4dec-9606-96fce779cdb3",
+      "published": "2026-10-09T02:45:00+00:00",
+      "duration": "01:25:03",
+      "episode_number": "22",
+      "episode_type": "",
+      "description_html": "<p>On this week's broadcast, Geno returns from The Alaskan Foreign Legion, The Juice casts off the aftermarket heathens and Caleb reveals the ancient origins of the rotary engine. The crew wraps with their marque-by-marque rundown of how Stellantis can fix their lineup problems, once and for all.</p>\n<p>Raise the lowered and we'll see y'all next week.</p>\n<p>As always, you can find us on all of the following:</p>\n<p>Website: <a href=\"https://irohpodcast.com/\" rel=\"nofollow\">https://irohpodcast.com/</a></p>\n<p>Bluesky: @irohpodcast.com</p>\n<p>Instagram: @iroh_show</p>\n<p>YouTube: @irohshow</p><p><a href=\"/transcripts/episode-22-the-international-race-of-malortians/\">Read transcript</a></p><hr>",
+      "description_text": "On this week's broadcast, Geno returns from The Alaskan Foreign Legion, The Juice casts off the aftermarket heathens and Caleb reveals the ancient origins of the rotary engine. The crew wraps with their marque-by-marque rundown of how Stellantis can fix their lineup problems, once and for all. Raise the lowered and we'll see y'all next week. As always, you can find us on all of the following: Website: https://irohpodcast.com/ Bluesky: @irohpodcast.com Instagram: @iroh_show YouTube: @irohshow",
+      "audio_url": "https://op3.dev/e/pinecast.com/listen/bc3f356c-0a1f-4dec-9606-96fce779cdb3:8b66b8a3-8c9f-41a6-bd4f-46c605ffef20.mp3?source=rss&ext=asset.mp3",
+      "audio_type": "audio/mpeg",
+      "image_url": "https://storage.pinecast.net/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/7130fb23-0a2e-4f48-9bb7-4d835cd69d19/NewIROHLogo.png.jpg",
+      "transcript_source_url": "https://pnc.st/s/iroh/bc3f356c/episode-22-the-international-race-of-mal-rtians/transcript",
+      "transcript_path": "/transcripts/episode-22-the-international-race-of-malortians/",
+      "episode_path": "/broadcasts/episode-22-the-international-race-of-malortians/",
+      "duration_iso": "PT1H25M3S"
+    },
+    {
       "title": "Episode 21: The Alaskan Foreign Legion",
       "link": "https://irohpodcast.com/broadcasts/episode-21-the-alaskan-foreign-legion/",
       "guid": "https://pinecast.com/guid/d6196c82-2279-465b-acf2-68b6cf3189cd",
