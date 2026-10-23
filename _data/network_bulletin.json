@@ -1,8 +1,13 @@
 {
   "source_name": "IROH on Bluesky",
   "source_url": "https://bsky.app/profile/irohpodcast.com",
-  "updated_at": "2026-10-16T16:07:58.161Z",
+  "updated_at": "2026-10-23T00:55:49.625Z",
   "posts": [
+    {
+      "text": "Heads-up, this week's episode will be a bit late this week. However, we plan on providing greatness.",
+      "created_at": "2026-10-23T00:55:49.625Z",
+      "url": "https://bsky.app/profile/irohpodcast.com/post/3myixsjia7c2r"
+    },
     {
       "text": "Finally got the boat up to the dragon 🥳",
       "created_at": "2026-10-16T16:07:58.161Z",
@@ -12,11 +17,6 @@
       "text": "Uh huh sure bud",
       "created_at": "2026-10-16T15:54:27.764Z",
       "url": "https://bsky.app/profile/irohpodcast.com/post/3mxywqxlyt22c"
-    },
-    {
-      "text": "Hit another coyote smdh",
-      "created_at": "2026-10-16T15:51:35.955Z",
-      "url": "https://bsky.app/profile/irohpodcast.com/post/3mxywltr3f22c"
     }
   ]
 }
