@@ -1,8 +1,13 @@
 {
   "source_name": "IROH on Bluesky",
   "source_url": "https://bsky.app/profile/irohpodcast.com",
-  "updated_at": "2026-10-23T00:55:49.625Z",
+  "updated_at": "2026-10-25T00:46:06.718Z",
   "posts": [
+    {
+      "text": "Episode 24 is still in progress, it's just taking a bit longer to get out than we'd anticipated. So, looks like next week will potentially have two episodes, instead of one. \n\nOr, we'll move to a different day of the week. \n\nMore to follow.",
+      "created_at": "2026-10-25T00:46:06.718Z",
+      "url": "https://bsky.app/profile/irohpodcast.com/post/3myny6yiu2s2s"
+    },
     {
       "text": "Heads-up, this week's episode will be a bit late this week. However, we plan on providing greatness.",
       "created_at": "2026-10-23T00:55:49.625Z",
@@ -12,11 +17,6 @@
       "text": "Finally got the boat up to the dragon 🥳",
       "created_at": "2026-10-16T16:07:58.161Z",
       "url": "https://bsky.app/profile/irohpodcast.com/post/3mxyxj4hjys2c"
-    },
-    {
-      "text": "Uh huh sure bud",
-      "created_at": "2026-10-16T15:54:27.764Z",
-      "url": "https://bsky.app/profile/irohpodcast.com/post/3mxywqxlyt22c"
     }
   ]
 }
