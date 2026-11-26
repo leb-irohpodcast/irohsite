@@ -3,6 +3,24 @@
   "feed_link": "https://irohpodcast.com",
   "episodes": [
     {
+      "title": "Episode 28: The Thanksgiving Special",
+      "link": "https://op3.dev/e/pinecast.com/listen/d3381ded-b822-4fb6-a963-6cab1a833ed8.mp3?source=rss&ext=asset.mp3",
+      "guid": "https://pinecast.com/guid/d3381ded-b822-4fb6-a963-6cab1a833ed8",
+      "published": "2026-11-26T21:20:48+00:00",
+      "duration": "01:06:39",
+      "episode_number": "28",
+      "episode_type": "",
+      "description_html": "<p>This week's broadcast kicks off with a chaotic catch-up, a debate over what belongs on the holiday plate and, of course, what you should drive to dinner.</p>\n<p>Along the way: regional stuffing-versus-dressing loyalties, Round 1 of The Official IROH Thanksgiving Menu Showdown, family-car stereotypes, and Velo’s $500 Porsche 944 S2 rescue.</p>\n<p>Questions, comments and flames to keep Geno warm can be sent to mailbag@irohpodcast.com</p>\n<p>Chapters</p>\n<ul>\n<li>\n<h3>00:00</h3>\n<p>The Thanksgiving special begins</p>\n</li>\n<li>\n<h3>04:02</h3>\n<p>Holiday-table politics and podcast tangents</p>\n</li>\n<li>\n<h3>11:13</h3>\n<p>Stuffing or dressing? The debate begins</p>\n</li>\n<li>\n<h3>18:39</h3>\n<p>What’s the best Thanksgiving food?</p>\n</li>\n<li>\n<h3>24:24</h3>\n<p>Thanksgiving traditions and Black Friday</p>\n</li>\n<li>\n<h3>27:12</h3>\n<p>What car should you bring to Thanksgiving?</p>\n</li>\n<li>\n<h3>35:50</h3>\n<p>Cars for every family member</p>\n</li>\n<li>\n<h3>43:37</h3>\n<p>Velo’s new-to-him Porsche 944</p>\n</li>\n<li>\n<h3>51:07</h3>\n<p>The $500 944 S2: specs, condition, and repair plans</p>\n</li>\n<li>\n<h3>59:59</h3>\n<p>Godzilla, ’80s movies, and the sign-off</p>\n</li>\n</ul><p><a href=\"/transcripts/episode-28-the-thanksgiving-special/\">Read transcript</a></p><hr>",
+      "description_text": "This week's broadcast kicks off with a chaotic catch-up, a debate over what belongs on the holiday plate and, of course, what you should drive to dinner. Along the way: regional stuffing-versus-dressing loyalties, Round 1 of The Official IROH Thanksgiving Menu Showdown, family-car stereotypes, and Velo’s $500 Porsche 944 S2 rescue. Questions, comments and flames to keep Geno warm can be sent to mailbag@irohpodcast.com Chapters 00:00 The Thanksgiving special begins 04:02 Holiday-table politics and podcast tangents 11:13 Stuffing or dressing? The debate begins 18:39 What’s the best Thanksgiving food? 24:24 Thanksgiving traditions and Black Friday 27:12 What car should you bring to Thanksgiving? 35:50 Cars for every family member 43:37 Velo’s new-to-him Porsche 944 51:07 The $500 944 S2: specs, condition, and repair plans 59:59 Godzilla, ’80s movies, and the sign-off",
+      "audio_url": "https://op3.dev/e/pinecast.com/listen/d3381ded-b822-4fb6-a963-6cab1a833ed8.mp3?source=rss&ext=asset.mp3",
+      "audio_type": "audio/mpeg",
+      "image_url": "https://storage.pinecast.net/cdn-cgi/image/width=1400,height=1400,fit=cover/podcasts/22715330-8a19-4424-beb2-7a289dcbde30/covers/d15919f5-03da-4b38-b142-f6bf23a1091a/pixelframe-design_waffle-place-font-logo-generator.jpg",
+      "transcript_source_url": "https://pnc.st/s/iroh/d3381ded/episode-28-the-thanksgiving-special/transcript",
+      "transcript_path": "/transcripts/episode-28-the-thanksgiving-special/",
+      "episode_path": "/broadcasts/episode-28-the-thanksgiving-special/",
+      "duration_iso": "PT1H6M39S"
+    },
+    {
       "title": "Episode 27: The Hog-Ass Cam Special",
       "link": "https://op3.dev/e/pinecast.com/listen/8f70e847-74e1-4cdb-a272-dd1397819f9a.mp3?source=rss&ext=asset.mp3",
       "guid": "https://pinecast.com/guid/8f70e847-74e1-4cdb-a272-dd1397819f9a",
